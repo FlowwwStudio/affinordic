@@ -1,5 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Tue Apr 23 2024 12:40:10 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Wed Jul 03 2024 21:36:29 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="66221bcdb6a56b23cacb7d88" data-wf-site="66221bccb6a56b23cacb7d06" lang="en">
 <head>
   <meta charset="utf-8">
@@ -237,6 +236,36 @@ input[claim-input="salary"]{
 input[claim-input="date"]{
 	background-image: url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6622d749b20cd2328f1b7a0b_Date.svg");
 }
+input[claim-input="brand"]{
+	background-image: url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6685b7adfce6cc0e6f190eaa_Brand-icon.svg");
+}
+input[claim-input="company"]{
+	background-image: url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6685b7add7f4bd419c7cb368_Company-icon.svg");
+}
+input[claim-input="imei"]{
+	background-image: url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6685b7ad96a05ae420e410e5_IEMI-nummer-icon.svg");
+}
+/* Base styles for input and dropdown */
+.claim_form_dropdown {
+  background-repeat: no-repeat;
+  padding-left: 2.5rem; /* Add space for the left icon */
+}
+/* Specific styles for select element */
+select.claim_form_dropdown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6685b7adac6504e29765dcd4_Product-icon.svg"), url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6685b7adf1bdb84eb83dbd77_Dropdown-icon.svg");
+  background-position: 1.25rem center, right 1.25rem center;
+  background-size: 1.25rem, 1rem; /* Set different sizes for the icons */
+  padding-right: 2.5rem; /* Add space for the right icon */
+}
+/* Apply existing styles to input */
+input[claim-input="product-group"], [data-name="product-group"] {
+  background-image: url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6685b7adac6504e29765dcd4_Product-icon.svg");
+  background-position: 1.25rem center;
+  text-indent: 0.75rem;
+}
 </style>
     </div>
     <main class="main-wrapper">
@@ -351,6 +380,7 @@ input[claim-input="date"]{
                           <div class="claim_form_step-dot"></div>
                           <div class="claim_form_step-dot"></div>
                           <div class="claim_form_step-dot"></div>
+                          <div class="claim_form_step-dot"></div>
                         </div>
                         <a href="#" class="button is-secondary is-disabled w-button">Næste</a>
                       </div>
@@ -363,7 +393,7 @@ input[claim-input="date"]{
                         </div>
                       </div>
                       <div class="claim_form_selection-container is-2-column"><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/IMEI-number.svg" loading="lazy" alt="" class="icon-height-medium"></div><input class="hide" name="radio" type="radio">
+                          <div class="margin-bottom margin-xsmall"><img src="images/IMEI-number.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
                           <div>
                             <div class="text-weight-bold">IMEI-nummer</div>
                           </div>
@@ -376,7 +406,7 @@ input[claim-input="date"]{
                             </div>
                           </div>
                         </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Serial-number.svg" loading="lazy" alt="" class="icon-height-medium"></div><input class="hide" name="radio" type="radio">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Serial-number.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
                           <div>
                             <div class="text-weight-bold">Serie-nummeret</div>
                           </div>
@@ -388,10 +418,43 @@ input[claim-input="date"]{
                                 </svg></div>
                             </div>
                           </div>
-                        </label><input class="claim_form_input span-2-column w-node-_24114ae6-d9df-b74a-247f-cc4be6632b17-cacb7d88 w-input" maxlength="256" name="field" data-name="Field" placeholder="Skriv nummeret her" claim-input="write" type="text" id="field" required=""></div>
+                        </label><input class="claim_form_input span-2-column w-node-_24114ae6-d9df-b74a-247f-cc4be6632b17-cacb7d88 w-input" maxlength="256" name="field" data-name="Field" placeholder="Skriv nummeret her" claim-input="write" type="text" id="field" required="">
+                        <div class="claim_form_error-message span-2-column">
+                          <div class="claim_form_error-message_text">Systemet kunne ikke finde dit produkt - udfyld venligst de påkrævede oplysninger på næste side</div>
+                        </div>
+                      </div>
                       <div class="claim_form_bottom">
                         <a href="#" class="button w-button">Tilbage</a>
                         <div class="claim_form_steps-container">
+                          <div class="claim_form_step-dot is-active"></div>
+                          <div class="claim_form_step-dot is-active"></div>
+                          <div class="claim_form_step-dot"></div>
+                          <div class="claim_form_step-dot"></div>
+                          <div class="claim_form_step-dot"></div>
+                          <div class="claim_form_step-dot"></div>
+                        </div>
+                        <a href="#" class="button is-secondary is-disabled w-button">Næste</a>
+                      </div>
+                    </div>
+                    <div fs-form-step="3" class="claim_form_step">
+                      <div class="max-width-medium">
+                        <div class="claim_form_heading-block">
+                          <h2>Anmeld skade</h2>
+                          <p>Systemet kunne ikke finde dit produkt - udfyld venligst de påkrævede oplysninger nedenfor</p>
+                        </div>
+                      </div>
+                      <div class="max-width-small">
+                        <div class="claim_form_selection-container"><select id="product-group" name="product-group" data-name="product-group" claim-input="product" class="claim_form_dropdown w-node-_04dd6523-047b-007d-9fc4-b78eb8d74379-cacb7d88 w-select">
+                            <option value="">Produktgruppe</option>
+                            <option value="First">First choice</option>
+                            <option value="Second">Second choice</option>
+                            <option value="Third">Third choice</option>
+                          </select><input class="claim_form_input w-node-_7b0f293d-1578-b43c-fe0c-46c38075fa99-cacb7d88 w-input" maxlength="256" name="product-brand" data-name="product-brand" placeholder="Produktmærke" claim-input="brand" type="text" id="product-brand" required=""><input class="claim_form_input w-input" maxlength="256" name="IMEI-number" data-name="IMEI-number" placeholder="IMEI-nummer" claim-input="imei" type="text" id="IMEI-number" required=""></div>
+                      </div>
+                      <div class="claim_form_bottom">
+                        <a href="#" class="button w-button">Tilbage</a>
+                        <div class="claim_form_steps-container">
+                          <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot"></div>
@@ -409,11 +472,12 @@ input[claim-input="date"]{
                         </div>
                       </div>
                       <div class="max-width-small">
-                        <div class="claim_form_selection-container"><input class="claim_form_input w-node-_7b0f293d-1578-b43c-fe0c-46c38075fa99-cacb7d88 w-input" maxlength="256" name="name" data-name="name" placeholder="Navn" claim-input="user" type="text" id="name" required=""><input class="claim_form_input w-input" maxlength="256" name="field-2" data-name="Field 2" placeholder="Telefonnr." claim-input="phone" type="text" id="field-2" required=""><input class="claim_form_input w-input" maxlength="256" name="email" data-name="email" placeholder="Email" claim-input="email" type="email" id="email" required=""><input class="claim_form_input w-input" maxlength="256" name="address" data-name="address" placeholder="Evt. returadresse og afdeling / attentionperson" claim-input="write" type="text" id="address" required=""></div>
+                        <div class="claim_form_selection-container"><input class="claim_form_input w-node-_8f2fd698-1aca-8d73-a1a4-2e7fcf1a9f77-cacb7d88 w-input" maxlength="256" name="company" data-name="company" placeholder="Firmanavn" claim-input="company" type="text" id="company" required=""><input class="claim_form_input w-node-c7a9f509-8430-7a5a-7740-21efff469d50-cacb7d88 w-input" maxlength="256" name="Name" data-name="Name" placeholder="Anmelders navn" claim-input="user" type="text" id="Name-4" required=""><input class="claim_form_input w-input" maxlength="256" name="field-2" data-name="Field 2" placeholder="Telefonnr." claim-input="phone" type="text" id="field-2" required=""><input class="claim_form_input w-input" maxlength="256" name="email-3" data-name="Email 3" placeholder="Email" claim-input="email" type="email" id="email-3" required=""><input class="claim_form_input w-input" maxlength="256" name="address-2" data-name="Address 2" placeholder="Evt. returadresse og afdeling / attentionperson" claim-input="write" type="text" id="address-2" required=""></div>
                       </div>
                       <div class="claim_form_bottom">
                         <a href="#" class="button w-button">Tilbage</a>
                         <div class="claim_form_steps-container">
+                          <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
@@ -431,7 +495,7 @@ input[claim-input="date"]{
                         </div>
                       </div>
                       <div class="claim_form_selection-container is-3-column"><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Accident.svg" loading="lazy" alt="" class="icon-height-medium"></div><input class="hide" name="radio" type="radio">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Accident.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
                           <div>
                             <div class="text-weight-bold">Uheld</div>
                           </div>
@@ -448,7 +512,7 @@ input[claim-input="date"]{
                             </div>
                           </div>
                         </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Malfunction.svg" loading="lazy" alt="" class="icon-height-medium"></div><input class="hide" name="radio" type="radio">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Malfunction.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
                           <div>
                             <div class="text-weight-bold">Funktionsfejl</div>
                           </div>
@@ -465,7 +529,7 @@ input[claim-input="date"]{
                             </div>
                           </div>
                         </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Liquid.svg" loading="lazy" alt="" class="icon-height-medium"></div><input class="hide" name="radio" type="radio">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Liquid.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
                           <div>
                             <div class="text-weight-bold">Væske</div>
                           </div>
@@ -482,17 +546,17 @@ input[claim-input="date"]{
                             </div>
                           </div>
                         </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Theft.svg" loading="lazy" alt="" class="icon-height-medium"></div><input class="hide" name="radio" type="radio">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Theft.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
                           <div>
                             <div class="text-weight-bold">Tyveri</div>
                           </div>
                         </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/termination-of-employment.svg" loading="lazy" alt="" class="icon-height-medium"></div><input class="hide" name="radio" type="radio">
+                          <div class="margin-bottom margin-xsmall"><img src="images/termination-of-employment.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
                           <div>
                             <div class="text-weight-bold">Ansættelsesophør</div>
                           </div>
                         </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Other.svg" loading="lazy" alt="" class="icon-height-medium"></div><input class="hide" name="radio" type="radio">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Other.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
                           <div>
                             <div class="text-weight-bold">Andet</div>
                           </div>
@@ -500,6 +564,7 @@ input[claim-input="date"]{
                       <div class="claim_form_bottom">
                         <a href="#" class="button w-button">Tilbage</a>
                         <div class="claim_form_steps-container">
+                          <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
@@ -529,6 +594,7 @@ input[claim-input="date"]{
                           <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
+                          <div class="claim_form_step-dot is-active"></div>
                         </div>
                         <a href="#" class="button is-secondary is-disabled w-button">Næste</a>
                       </div>
@@ -542,7 +608,7 @@ input[claim-input="date"]{
                       </div>
                       <div class="max-width-small">
                         <div class="claim_form_selection-container"><label class="claim_form_radio2">
-                            <div class="margin-bottom margin-xsmall"><img src="images/Theft.svg" loading="lazy" alt="" class="icon-height-medium"></div><input class="hide" name="radio" type="radio">
+                            <div class="margin-bottom margin-xsmall"><img src="images/Theft.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
                             <div>
                               <div class="text-weight-bold">Tyveri</div>
                             </div>
@@ -551,6 +617,7 @@ input[claim-input="date"]{
                       <div class="claim_form_bottom">
                         <a href="#" class="button w-button">Tilbage</a>
                         <div class="claim_form_steps-container">
+                          <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
@@ -574,6 +641,7 @@ input[claim-input="date"]{
                       <div class="claim_form_bottom">
                         <a href="#" class="button w-button">Tilbage</a>
                         <div class="claim_form_steps-container">
+                          <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
                           <div class="claim_form_step-dot is-active"></div>
@@ -624,7 +692,7 @@ input[claim-input="date"]{
                         </div>
                       </div>
                       <div class="claim_form_selection-container is-2-column"><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Apple-icon.svg" loading="lazy" alt="" class="icon-height-medium"></div><input class="hide" name="radio" type="radio">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Apple-icon.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
                           <div>
                             <div class="text-weight-bold">Apple</div>
                           </div>
@@ -638,7 +706,7 @@ input[claim-input="date"]{
                             </div>
                           </div>
                         </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Andriod-logo.svg" loading="lazy" alt="" class="icon-height-medium"></div><input class="hide" name="radio" type="radio">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Andriod-logo.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
                           <div>
                             <div class="text-weight-bold">Android</div>
                           </div>
