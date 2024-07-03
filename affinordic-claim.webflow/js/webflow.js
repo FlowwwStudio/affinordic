@@ -770,7 +770,7 @@
         _.VERSION = "1.6.0-Webflow";
         var breaker = {};
         var ArrayProto = Array.prototype, ObjProto = Object.prototype, FuncProto = Function.prototype;
-        var push = ArrayProto.push, slice = ArrayProto.slice, concat = ArrayProto.concat, toString = ObjProto.toString, hasOwnProperty2 = ObjProto.hasOwnProperty;
+        var push = ArrayProto.push, slice = ArrayProto.slice, concat = ArrayProto.concat, toString = ObjProto.toString, hasOwnProperty = ObjProto.hasOwnProperty;
         var nativeForEach = ArrayProto.forEach, nativeMap = ArrayProto.map, nativeReduce = ArrayProto.reduce, nativeReduceRight = ArrayProto.reduceRight, nativeFilter = ArrayProto.filter, nativeEvery = ArrayProto.every, nativeSome = ArrayProto.some, nativeIndexOf = ArrayProto.indexOf, nativeLastIndexOf = ArrayProto.lastIndexOf, nativeIsArray = Array.isArray, nativeKeys = Object.keys, nativeBind = FuncProto.bind;
         var each = _.each = _.forEach = function(obj, iterator, context) {
           if (obj == null)
@@ -922,7 +922,7 @@
           return keys;
         };
         _.has = function(obj, key) {
-          return hasOwnProperty2.call(obj, key);
+          return hasOwnProperty.call(obj, key);
         };
         _.isObject = function(obj) {
           return obj === Object(obj);
@@ -1564,13 +1564,13 @@
   // node_modules/@babel/runtime/helpers/typeof.js
   var require_typeof = __commonJS({
     "node_modules/@babel/runtime/helpers/typeof.js"(exports, module) {
-      function _typeof(obj) {
+      function _typeof(o) {
         "@babel/helpers - typeof";
-        return module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj2) {
-          return typeof obj2;
-        } : function(obj2) {
-          return obj2 && "function" == typeof Symbol && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
-        }, module.exports.__esModule = true, module.exports["default"] = module.exports, _typeof(obj);
+        return module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+          return typeof o2;
+        } : function(o2) {
+          return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
+        }, module.exports.__esModule = true, module.exports["default"] = module.exports, _typeof(o);
       }
       module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
     }
@@ -1580,45 +1580,33 @@
   var require_interopRequireWildcard = __commonJS({
     "node_modules/@babel/runtime/helpers/interopRequireWildcard.js"(exports, module) {
       var _typeof = require_typeof()["default"];
-      function _getRequireWildcardCache(nodeInterop) {
-        if (typeof WeakMap !== "function")
+      function _getRequireWildcardCache(e) {
+        if ("function" != typeof WeakMap)
           return null;
-        var cacheBabelInterop = /* @__PURE__ */ new WeakMap();
-        var cacheNodeInterop = /* @__PURE__ */ new WeakMap();
-        return (_getRequireWildcardCache = function _getRequireWildcardCache2(nodeInterop2) {
-          return nodeInterop2 ? cacheNodeInterop : cacheBabelInterop;
-        })(nodeInterop);
+        var r = /* @__PURE__ */ new WeakMap(), t = /* @__PURE__ */ new WeakMap();
+        return (_getRequireWildcardCache = function _getRequireWildcardCache2(e2) {
+          return e2 ? t : r;
+        })(e);
       }
-      function _interopRequireWildcard(obj, nodeInterop) {
-        if (!nodeInterop && obj && obj.__esModule) {
-          return obj;
-        }
-        if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+      function _interopRequireWildcard(e, r) {
+        if (!r && e && e.__esModule)
+          return e;
+        if (null === e || "object" != _typeof(e) && "function" != typeof e)
           return {
-            "default": obj
+            "default": e
           };
-        }
-        var cache = _getRequireWildcardCache(nodeInterop);
-        if (cache && cache.has(obj)) {
-          return cache.get(obj);
-        }
-        var newObj = {};
-        var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-        for (var key in obj) {
-          if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-            if (desc && (desc.get || desc.set)) {
-              Object.defineProperty(newObj, key, desc);
-            } else {
-              newObj[key] = obj[key];
-            }
+        var t = _getRequireWildcardCache(r);
+        if (t && t.has(e))
+          return t.get(e);
+        var n = {
+          __proto__: null
+        }, a = Object.defineProperty && Object.getOwnPropertyDescriptor;
+        for (var u in e)
+          if ("default" !== u && {}.hasOwnProperty.call(e, u)) {
+            var i = a ? Object.getOwnPropertyDescriptor(e, u) : null;
+            i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u];
           }
-        }
-        newObj["default"] = obj;
-        if (cache) {
-          cache.set(obj, newObj);
-        }
-        return newObj;
+        return n["default"] = e, t && t.set(e, n), n;
       }
       module.exports = _interopRequireWildcard, module.exports.__esModule = true, module.exports["default"] = module.exports;
     }
@@ -2027,9 +2015,9 @@
     "node_modules/core-js/internals/has-own-property.js"(exports, module) {
       var uncurryThis = require_function_uncurry_this();
       var toObject = require_to_object();
-      var hasOwnProperty2 = uncurryThis({}.hasOwnProperty);
+      var hasOwnProperty = uncurryThis({}.hasOwnProperty);
       module.exports = Object.hasOwn || function hasOwn(it, key) {
-        return hasOwnProperty2(toObject(it), key);
+        return hasOwnProperty(toObject(it), key);
       };
     }
   });
@@ -2887,11 +2875,11 @@
     "node_modules/lodash/_getRawTag.js"(exports, module) {
       var Symbol2 = require_Symbol();
       var objectProto = Object.prototype;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       var nativeObjectToString = objectProto.toString;
       var symToStringTag = Symbol2 ? Symbol2.toStringTag : void 0;
       function getRawTag(value) {
-        var isOwn = hasOwnProperty2.call(value, symToStringTag), tag = value[symToStringTag];
+        var isOwn = hasOwnProperty.call(value, symToStringTag), tag = value[symToStringTag];
         try {
           value[symToStringTag] = void 0;
           var unmasked = true;
@@ -2983,7 +2971,7 @@
       var funcProto = Function.prototype;
       var objectProto = Object.prototype;
       var funcToString = funcProto.toString;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       var objectCtorString = funcToString.call(Object);
       function isPlainObject(value) {
         if (!isObjectLike(value) || baseGetTag(value) != objectTag) {
@@ -2993,7 +2981,7 @@
         if (proto === null) {
           return true;
         }
-        var Ctor = hasOwnProperty2.call(proto, "constructor") && proto.constructor;
+        var Ctor = hasOwnProperty.call(proto, "constructor") && proto.constructor;
         return typeof Ctor == "function" && Ctor instanceof Ctor && funcToString.call(Ctor) == objectCtorString;
       }
       module.exports = isPlainObject;
@@ -3878,7 +3866,7 @@
         }
         return keys;
       }
-      var hasOwnProperty2 = {}.hasOwnProperty;
+      var hasOwnProperty = {}.hasOwnProperty;
       function clone(obj) {
         if (Array.isArray(obj))
           return obj.slice();
@@ -4045,7 +4033,7 @@
         var omitList = Array.isArray(attrs) ? attrs : [attrs];
         var fDoSomething = false;
         for (var i = 0; i < omitList.length; i++) {
-          if (hasOwnProperty2.call(obj, omitList[i])) {
+          if (hasOwnProperty.call(obj, omitList[i])) {
             fDoSomething = true;
             break;
           }
@@ -4488,9 +4476,9 @@
       var funcProto = Function.prototype;
       var objectProto = Object.prototype;
       var funcToString = funcProto.toString;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       var reIsNative = RegExp(
-        "^" + funcToString.call(hasOwnProperty2).replace(reRegExpChar, "\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, "$1.*?") + "$"
+        "^" + funcToString.call(hasOwnProperty).replace(reRegExpChar, "\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, "$1.*?") + "$"
       );
       function baseIsNative(value) {
         if (!isObject(value) || isMasked(value)) {
@@ -4575,14 +4563,14 @@
       var nativeCreate = require_nativeCreate();
       var HASH_UNDEFINED = "__lodash_hash_undefined__";
       var objectProto = Object.prototype;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       function hashGet(key) {
         var data = this.__data__;
         if (nativeCreate) {
           var result = data[key];
           return result === HASH_UNDEFINED ? void 0 : result;
         }
-        return hasOwnProperty2.call(data, key) ? data[key] : void 0;
+        return hasOwnProperty.call(data, key) ? data[key] : void 0;
       }
       module.exports = hashGet;
     }
@@ -4593,10 +4581,10 @@
     "node_modules/lodash/_hashHas.js"(exports, module) {
       var nativeCreate = require_nativeCreate();
       var objectProto = Object.prototype;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       function hashHas(key) {
         var data = this.__data__;
-        return nativeCreate ? data[key] !== void 0 : hasOwnProperty2.call(data, key);
+        return nativeCreate ? data[key] !== void 0 : hasOwnProperty.call(data, key);
       }
       module.exports = hashHas;
     }
@@ -5154,12 +5142,12 @@
       var baseIsArguments = require_baseIsArguments();
       var isObjectLike = require_isObjectLike();
       var objectProto = Object.prototype;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       var propertyIsEnumerable = objectProto.propertyIsEnumerable;
       var isArguments = baseIsArguments(function() {
         return arguments;
       }()) ? baseIsArguments : function(value) {
-        return isObjectLike(value) && hasOwnProperty2.call(value, "callee") && !propertyIsEnumerable.call(value, "callee");
+        return isObjectLike(value) && hasOwnProperty.call(value, "callee") && !propertyIsEnumerable.call(value, "callee");
       };
       module.exports = isArguments;
     }
@@ -5311,11 +5299,11 @@
       var isIndex = require_isIndex();
       var isTypedArray = require_isTypedArray();
       var objectProto = Object.prototype;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       function arrayLikeKeys(value, inherited) {
         var isArr = isArray(value), isArg = !isArr && isArguments(value), isBuff = !isArr && !isArg && isBuffer(value), isType = !isArr && !isArg && !isBuff && isTypedArray(value), skipIndexes = isArr || isArg || isBuff || isType, result = skipIndexes ? baseTimes(value.length, String) : [], length = result.length;
         for (var key in value) {
-          if ((inherited || hasOwnProperty2.call(value, key)) && !(skipIndexes && // Safari 9 has enumerable `arguments.length` in strict mode.
+          if ((inherited || hasOwnProperty.call(value, key)) && !(skipIndexes && // Safari 9 has enumerable `arguments.length` in strict mode.
           (key == "length" || // Node.js 0.10 has enumerable non-index properties on buffers.
           isBuff && (key == "offset" || key == "parent") || // PhantomJS 2 has enumerable non-index properties on typed arrays.
           isType && (key == "buffer" || key == "byteLength" || key == "byteOffset") || // Skip index properties.
@@ -5356,14 +5344,14 @@
       var isPrototype = require_isPrototype();
       var nativeKeys = require_nativeKeys();
       var objectProto = Object.prototype;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       function baseKeys(object) {
         if (!isPrototype(object)) {
           return nativeKeys(object);
         }
         var result = [];
         for (var key in Object(object)) {
-          if (hasOwnProperty2.call(object, key) && key != "constructor") {
+          if (hasOwnProperty.call(object, key) && key != "constructor") {
             result.push(key);
           }
         }
@@ -5417,7 +5405,7 @@
       var getAllKeys = require_getAllKeys();
       var COMPARE_PARTIAL_FLAG = 1;
       var objectProto = Object.prototype;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       function equalObjects(object, other, bitmask, customizer, equalFunc, stack) {
         var isPartial = bitmask & COMPARE_PARTIAL_FLAG, objProps = getAllKeys(object), objLength = objProps.length, othProps = getAllKeys(other), othLength = othProps.length;
         if (objLength != othLength && !isPartial) {
@@ -5426,7 +5414,7 @@
         var index = objLength;
         while (index--) {
           var key = objProps[index];
-          if (!(isPartial ? key in other : hasOwnProperty2.call(other, key))) {
+          if (!(isPartial ? key in other : hasOwnProperty.call(other, key))) {
             return false;
           }
         }
@@ -5567,7 +5555,7 @@
       var arrayTag = "[object Array]";
       var objectTag = "[object Object]";
       var objectProto = Object.prototype;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
         var objIsArr = isArray(object), othIsArr = isArray(other), objTag = objIsArr ? arrayTag : getTag(object), othTag = othIsArr ? arrayTag : getTag(other);
         objTag = objTag == argsTag ? objectTag : objTag;
@@ -5585,7 +5573,7 @@
           return objIsArr || isTypedArray(object) ? equalArrays(object, other, bitmask, customizer, equalFunc, stack) : equalByTag(object, other, objTag, bitmask, customizer, equalFunc, stack);
         }
         if (!(bitmask & COMPARE_PARTIAL_FLAG)) {
-          var objIsWrapped = objIsObj && hasOwnProperty2.call(object, "__wrapped__"), othIsWrapped = othIsObj && hasOwnProperty2.call(other, "__wrapped__");
+          var objIsWrapped = objIsObj && hasOwnProperty.call(object, "__wrapped__"), othIsWrapped = othIsObj && hasOwnProperty.call(other, "__wrapped__");
           if (objIsWrapped || othIsWrapped) {
             var objUnwrapped = objIsWrapped ? object.value() : object, othUnwrapped = othIsWrapped ? other.value() : other;
             stack || (stack = new Stack());
@@ -7626,21 +7614,21 @@
       return false;
     }
     for (let i = 0; i < keysA.length; i++) {
-      if (
+      if (!Object.hasOwn(
+        objB,
         // @ts-expect-error - TS2345 - Argument of type 'string | undefined' is not assignable to parameter of type 'PropertyKey'.
-        !hasOwnProperty.call(objB, keysA[i]) || // @ts-expect-error - TS2538 - Type 'undefined' cannot be used as an index type. | TS2538 - Type 'undefined' cannot be used as an index type.
-        !is(objA[keysA[i]], objB[keysA[i]])
-      ) {
+        keysA[i]
+      ) || // @ts-expect-error - TS2538 - Type 'undefined' cannot be used as an index type. | TS2538 - Type 'undefined' cannot be used as an index type.
+      !is(objA[keysA[i]], objB[keysA[i]])) {
         return false;
       }
     }
     return true;
   }
-  var hasOwnProperty, shallowEqual_default;
+  var shallowEqual_default;
   var init_shallowEqual = __esm({
     "packages/systems/ix2/shared/logic/shallowEqual.ts"() {
       "use strict";
-      hasOwnProperty = Object.prototype.hasOwnProperty;
       shallowEqual_default = shallowEqual;
     }
   });
@@ -9253,10 +9241,10 @@
       var baseAssignValue = require_baseAssignValue();
       var eq = require_eq();
       var objectProto = Object.prototype;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       function assignValue(object, key, value) {
         var objValue = object[key];
-        if (!(hasOwnProperty2.call(object, key) && eq(objValue, value)) || value === void 0 && !(key in object)) {
+        if (!(hasOwnProperty.call(object, key) && eq(objValue, value)) || value === void 0 && !(key in object)) {
           baseAssignValue(object, key, value);
         }
       }
@@ -9362,14 +9350,14 @@
       var isPrototype = require_isPrototype();
       var nativeKeysIn = require_nativeKeysIn();
       var objectProto = Object.prototype;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       function baseKeysIn(object) {
         if (!isObject(object)) {
           return nativeKeysIn(object);
         }
         var isProto = isPrototype(object), result = [];
         for (var key in object) {
-          if (!(key == "constructor" && (isProto || !hasOwnProperty2.call(object, key)))) {
+          if (!(key == "constructor" && (isProto || !hasOwnProperty.call(object, key)))) {
             result.push(key);
           }
         }
@@ -9455,7 +9443,7 @@
       var mapTag = "[object Map]";
       var setTag = "[object Set]";
       var objectProto = Object.prototype;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       function isEmpty2(value) {
         if (value == null) {
           return true;
@@ -9471,7 +9459,7 @@
           return !baseKeys(value).length;
         }
         for (var key in value) {
-          if (hasOwnProperty2.call(value, key)) {
+          if (hasOwnProperty.call(value, key)) {
             return false;
           }
         }
@@ -10288,9 +10276,9 @@
     "node_modules/lodash/_getFuncName.js"(exports, module) {
       var realNames = require_realNames();
       var objectProto = Object.prototype;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       function getFuncName(func) {
-        var result = func.name + "", array = realNames[result], length = hasOwnProperty2.call(realNames, result) ? array.length : 0;
+        var result = func.name + "", array = realNames[result], length = hasOwnProperty.call(realNames, result) ? array.length : 0;
         while (length--) {
           var data = array[length], otherFunc = data.func;
           if (otherFunc == null || otherFunc == func) {
@@ -10369,13 +10357,13 @@
       var isObjectLike = require_isObjectLike();
       var wrapperClone = require_wrapperClone();
       var objectProto = Object.prototype;
-      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      var hasOwnProperty = objectProto.hasOwnProperty;
       function lodash(value) {
         if (isObjectLike(value) && !isArray(value) && !(value instanceof LazyWrapper)) {
           if (value instanceof LodashWrapper) {
             return value;
           }
-          if (hasOwnProperty2.call(value, "__wrapped__")) {
+          if (hasOwnProperty.call(value, "__wrapped__")) {
             return wrapperClone(value);
           }
         }
@@ -12894,5 +12882,5 @@ timm/lib/timm.js:
  * Webflow: Interactions 2.0: Init
  */
 Webflow.require('ix2').init(
-{"events":{"e-3":{"id":"e-3","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-4"}},"mediaQueries":["main"],"target":{"selector":".claim_form_radio-bottom","originalId":"667f06e8-bccf-dfc7-093c-90fbd77c089f","appliesTo":"CLASS"},"targets":[{"selector":".claim_form_radio-bottom","originalId":"667f06e8-bccf-dfc7-093c-90fbd77c089f","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1713536498915},"e-4":{"id":"e-4","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-2","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-3"}},"mediaQueries":["main"],"target":{"selector":".claim_form_radio-bottom","originalId":"667f06e8-bccf-dfc7-093c-90fbd77c089f","appliesTo":"CLASS"},"targets":[{"selector":".claim_form_radio-bottom","originalId":"667f06e8-bccf-dfc7-093c-90fbd77c089f","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1713536498915},"e-5":{"id":"e-5","name":"","animationType":"custom","eventTypeId":"MOUSE_CLICK","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-3","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-6"}},"mediaQueries":["medium","small","tiny"],"target":{"selector":".claim_form_radio-bottom","originalId":"667f06e8-bccf-dfc7-093c-90fbd77c089f","appliesTo":"CLASS"},"targets":[],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1713875833661},"e-6":{"id":"e-6","name":"","animationType":"custom","eventTypeId":"MOUSE_SECOND_CLICK","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-4","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-5"}},"mediaQueries":["medium","small","tiny"],"target":{"selector":".claim_form_radio-bottom","originalId":"667f06e8-bccf-dfc7-093c-90fbd77c089f","appliesTo":"CLASS"},"targets":[],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1713875833662}},"actionLists":{"a":{"id":"a","title":"Tooltip [Hover in]","actionItemGroups":[{"actionItems":[{"id":"a-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-n-5","actionTypeId":"GENERAL_DISPLAY","config":{"delay":0,"easing":"","duration":0,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":"block"}},{"id":"a-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":1,"unit":""}}]}],"useFirstGroupAsInitialState":true,"createdOn":1713536287520},"a-2":{"id":"a-2","title":"Tooltip [Hover out]","actionItemGroups":[{"actionItems":[{"id":"a-2-n-5","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-2-n-3","actionTypeId":"GENERAL_DISPLAY","config":{"delay":0,"easing":"","duration":0,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":"none"}}]}],"useFirstGroupAsInitialState":false,"createdOn":1713536287520},"a-3":{"id":"a-3","title":"Tooltip [Open]","actionItemGroups":[{"actionItems":[{"id":"a-3-n","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-3-n-2","actionTypeId":"GENERAL_DISPLAY","config":{"delay":0,"easing":"","duration":0,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":"block"}},{"id":"a-3-n-3","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":1,"unit":""}}]}],"useFirstGroupAsInitialState":true,"createdOn":1713536287520},"a-4":{"id":"a-4","title":"Tooltip [Close]","actionItemGroups":[{"actionItems":[{"id":"a-4-n","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-4-n-2","actionTypeId":"GENERAL_DISPLAY","config":{"delay":0,"easing":"","duration":0,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":"none"}}]}],"useFirstGroupAsInitialState":false,"createdOn":1713536287520}},"site":{"mediaQueries":[{"key":"main","min":992,"max":10000},{"key":"medium","min":768,"max":991},{"key":"small","min":480,"max":767},{"key":"tiny","min":0,"max":479}]}}
+{"events":{"e-3":{"id":"e-3","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-4"}},"mediaQueries":["main"],"target":{"selector":".claim_form_radio-bottom","originalId":"667f06e8-bccf-dfc7-093c-90fbd77c089f","appliesTo":"CLASS"},"targets":[{"selector":".claim_form_radio-bottom","originalId":"667f06e8-bccf-dfc7-093c-90fbd77c089f","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1713536498915},"e-4":{"id":"e-4","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-2","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-3"}},"mediaQueries":["main"],"target":{"selector":".claim_form_radio-bottom","originalId":"667f06e8-bccf-dfc7-093c-90fbd77c089f","appliesTo":"CLASS"},"targets":[{"selector":".claim_form_radio-bottom","originalId":"667f06e8-bccf-dfc7-093c-90fbd77c089f","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1713536498915},"e-5":{"id":"e-5","name":"","animationType":"custom","eventTypeId":"MOUSE_CLICK","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-3","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-6"}},"mediaQueries":["medium","small","tiny"],"target":{"selector":".claim_form_radio-bottom","originalId":"667f06e8-bccf-dfc7-093c-90fbd77c089f","appliesTo":"CLASS"},"targets":[{"selector":".claim_form_radio-bottom","originalId":"667f06e8-bccf-dfc7-093c-90fbd77c089f","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1713875833661},"e-6":{"id":"e-6","name":"","animationType":"custom","eventTypeId":"MOUSE_SECOND_CLICK","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-4","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-5"}},"mediaQueries":["medium","small","tiny"],"target":{"selector":".claim_form_radio-bottom","originalId":"667f06e8-bccf-dfc7-093c-90fbd77c089f","appliesTo":"CLASS"},"targets":[{"selector":".claim_form_radio-bottom","originalId":"667f06e8-bccf-dfc7-093c-90fbd77c089f","appliesTo":"CLASS"}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1713875833662}},"actionLists":{"a":{"id":"a","title":"Tooltip [Hover in]","actionItemGroups":[{"actionItems":[{"id":"a-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-n-5","actionTypeId":"GENERAL_DISPLAY","config":{"delay":0,"easing":"","duration":0,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":"block"}},{"id":"a-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":1,"unit":""}}]}],"useFirstGroupAsInitialState":true,"createdOn":1713536287520},"a-2":{"id":"a-2","title":"Tooltip [Hover out]","actionItemGroups":[{"actionItems":[{"id":"a-2-n-5","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-2-n-3","actionTypeId":"GENERAL_DISPLAY","config":{"delay":0,"easing":"","duration":0,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":"none"}}]}],"useFirstGroupAsInitialState":false,"createdOn":1713536287520},"a-3":{"id":"a-3","title":"Tooltip [Open]","actionItemGroups":[{"actionItems":[{"id":"a-3-n","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-3-n-2","actionTypeId":"GENERAL_DISPLAY","config":{"delay":0,"easing":"","duration":0,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":"block"}},{"id":"a-3-n-3","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":1,"unit":""}}]}],"useFirstGroupAsInitialState":true,"createdOn":1713536287520},"a-4":{"id":"a-4","title":"Tooltip [Close]","actionItemGroups":[{"actionItems":[{"id":"a-4-n","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":300,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-4-n-2","actionTypeId":"GENERAL_DISPLAY","config":{"delay":0,"easing":"","duration":0,"target":{"useEventTarget":"CHILDREN","selector":".claim_form_info-tooltip","selectorGuids":["2d712407-e03d-ca60-263d-884f1b9be23a"]},"value":"none"}}]}],"useFirstGroupAsInitialState":false,"createdOn":1713536287520}},"site":{"mediaQueries":[{"key":"main","min":992,"max":10000},{"key":"medium","min":768,"max":991},{"key":"small","min":480,"max":767},{"key":"tiny","min":0,"max":479}]}}
 );

@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Wed Jul 03 2024 21:36:29 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Wed Jul 03 2024 22:31:16 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="66221bcdb6a56b23cacb7d88" data-wf-site="66221bccb6a56b23cacb7d06" lang="en">
 <head>
   <meta charset="utf-8">
@@ -22,6 +22,7 @@
   -o-font-smoothing: antialiased;
 }
 </style>
+  <link rel="stylesheet" href="https://fengyuanchen.github.io/datepicker/css/datepicker.css">
 </head>
 <body>
   <div class="page-wrapper">
@@ -582,7 +583,7 @@ input[claim-input="product-group"], [data-name="product-group"] {
                         </div>
                       </div>
                       <div class="max-width-small">
-                        <div class="claim_form_selection-container"><textarea class="claim_form_textarea w-node-_00cec7e7-b062-0c46-e21a-90ed2361da62-cacb7d88 w-input" maxlength="5000" claim-textarea="write" name="field-3" data-name="Field 3" placeholder="Beskriv den hændelse der har medført skaden (hvis den kendes)" id="field-3"></textarea><textarea class="claim_form_textarea w-input" maxlength="5000" claim-textarea="write" name="field-3" data-name="Field 3" placeholder="Hvad er der sket med udstyret som følge af overstående hændelse?" id="field-3"></textarea>
+                        <div class="claim_form_selection-container"><input class="claim_form_input w-node-c9a10286-c918-2587-5c40-c2858109c290-cacb7d88 w-input" autocomplete="off" maxlength="256" name="Date-4" data-name="Date 4" placeholder="Skadesdato" data-toggle="datepicker" claim-input="date" type="text" id="Date-4" required=""><textarea class="claim_form_textarea w-node-_00cec7e7-b062-0c46-e21a-90ed2361da62-cacb7d88 w-input" maxlength="5000" claim-textarea="write" name="field-3" data-name="Field 3" placeholder="Beskriv den hændelse der har medført skaden (hvis den kendes)" id="field-3"></textarea><textarea class="claim_form_textarea w-input" maxlength="5000" claim-textarea="write" name="field-3" data-name="Field 3" placeholder="Hvad er der sket med udstyret som følge af overstående hændelse?" id="field-3"></textarea>
                           <div id="w-node-_00cec7e7-b062-0c46-e21a-90ed2361da64-cacb7d88" class="text-size-small">Ved funktionsfejl uden en kendt forudgående hændelse, skrives blot ”Ingen” i det øverste felt, og den opståede fejl der er konstateret på udstyret beskrives i det nederste felt”</div>
                         </div>
                       </div>
@@ -798,5 +799,127 @@ input[claim-input="product-group"], [data-name="product-group"] {
     });
 });
 </script>
+  <script src="https://fengyuanchen.github.io/datepicker/js/datepicker.js"></script>
+  <script>
+    $(document).ready(function () {
+        $('[data-toggle="datepicker"]').datepicker({
+            format: 'mm-dd-yyyy'
+        });
+        // Available date placeholders:
+        // Year: yyyy
+        // Month: mm
+        // Day: dd
+        if (window.innerWidth < 768) {
+            $('[data-toggle="datepicker"]').attr('readonly', 'readonly')
+        }
+    });
+</script>
+  <!--  You can put your custom CSS attributes  -->
+  <style>
+    /* You can apply your own color! 
+    --main-light-color is the light grey, 
+    --main-dark-color is the text
+    --main-active-color is the highlight
+    you can just add like red, or blue or any helx you like! */
+    :root {
+        --main-light-color: #7ca9cd;
+        --main-dark-color: var(--schemes--on-primary-container);
+        --main-active-color: var(--schemes--on-primary-container);
+    }
+    .datepicker-dropdown {
+        border-radius: 8px !important;
+        border: 0 !important;
+        -webkit-box-shadow: 0px 48px 88px rgba(23, 9, 54, 0.08);
+        box-shadow: 0px 48px 88px rgba(23, 9, 54, 0.08);
+        box-sizing: border-box;
+    }
+    .datepicker-panel>ul[data-view="week"]>li {
+        background-color: var(--main-light-color);
+        color: var(--main-dark-color);
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0;
+        height: initial;
+        padding-top: 3px;
+        margin-bottom: 4px;
+    }
+    .datepicker-panel>ul[data-view="week"]>li:hover {
+        background-color: var(--main-light-color);
+        color: var(--main-dark-color);
+        border-radius: 0px;
+    }
+    .datepicker-panel>ul[data-view="week"] li:first-child {
+        border-radius: 20px 0 0 20px;
+    }
+    .datepicker-panel>ul[data-view="week"] li:last-child {
+        border-radius: 0 20px 20px 0;
+    }
+    .datepicker-top-left::before,
+    .datepicker-top-left::after {
+        display: none;
+    }
+    .datepicker-panel>ul>li.picked, .datepicker-panel>ul>li.highlighted,
+    .datepicker-panel>ul>li.picked:hover {
+        color: var(--main-active-color);
+        background: var(--main-light-color);
+        border-radius: 8px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    li[data-view="month current"],
+    li[data-view="year current"] {
+        text-align: left;
+        color: var(--main-dark-color);
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        /* line-height: 24px; */
+        padding-left: 15px;
+        border-radius: 10px;
+    }
+    .datepicker-panel>ul>li:hover {
+        background: var(--main-light-color);
+        border-radius: 10px;
+    }
+    li[data-view="month current"],
+    li[data-view="year current"],
+    li[data-view="years current"] {
+        margin-bottom: 4px !important;
+    }
+    @media screen and (min-width: 768px) {
+        .datepicker-dropdown {
+            width: 364px;
+            padding: 12px;
+        }
+        .datepicker-panel>ul>li {
+            width: 48px;
+            height: 48px;
+            padding-top: 10px;
+        }
+        li[data-view="month next"],
+        li[data-view="year next"],
+        li[data-view="years next"] {
+            position: absolute;
+            right: 18px
+        }
+        li[data-view="month prev"],
+        li[data-view="year prev"],
+        li[data-view="years prev"] {
+            position: absolute;
+            right: 66px
+        }
+        ul[data-view="months"] li,
+        ul[data-view="years"] li {
+            padding-top: 0px;
+            width: 57px !important;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .datepicker-panel {
+            transform: scale(0.97);
+        }
+    }
+</style>
 </body>
 </html>

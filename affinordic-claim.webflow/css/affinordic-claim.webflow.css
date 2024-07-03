@@ -1706,6 +1706,7 @@ figcaption {
   background-color: var(--surfaces--surface-tint-18);
   border-radius: .19rem;
   padding: 1rem 1.25rem 1rem 3.25rem;
+  font-size: 1rem;
 }
 
 .claim_form_textarea::placeholder {
@@ -1822,6 +1823,31 @@ figcaption {
   background-repeat: no-repeat;
   background-size: auto;
   max-width: 55ch;
+}
+
+.date-field {
+  color: #151e24;
+  border: 1px solid #e9ecf0;
+  border-radius: 12px;
+  width: 100%;
+  min-height: 48px;
+  margin-bottom: 0;
+  padding: 12px 16px 12px 52px;
+  font-size: 14px;
+  transition: all .25s;
+  box-shadow: 1px 1px 2px rgba(114, 129, 167, .04);
+}
+
+.date-field:hover {
+  border-color: #ccd5e0;
+}
+
+.date-field:focus {
+  border-color: #642eff;
+}
+
+.date-field::placeholder {
+  color: #a0a6b0;
 }
 
 @media screen and (max-width: 991px) {
@@ -3563,3 +3589,5 @@ figcaption {
 #w-node-_723dac19-3a6b-8f5e-89ce-53b9006ba92d-cacb7da0 {
   justify-self: start;
 }
+
+

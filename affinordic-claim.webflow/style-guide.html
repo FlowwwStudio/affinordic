@@ -1,5 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Tue Apr 23 2024 10:20:23 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Wed Jul 03 2024 22:31:16 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="66221bcdb6a56b23cacb7da0" data-wf-site="66221bccb6a56b23cacb7d06" lang="en">
 <head>
   <meta charset="utf-8">
@@ -238,6 +237,36 @@ input[claim-input="salary"]{
 }
 input[claim-input="date"]{
 	background-image: url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6622d749b20cd2328f1b7a0b_Date.svg");
+}
+input[claim-input="brand"]{
+	background-image: url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6685b7adfce6cc0e6f190eaa_Brand-icon.svg");
+}
+input[claim-input="company"]{
+	background-image: url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6685b7add7f4bd419c7cb368_Company-icon.svg");
+}
+input[claim-input="imei"]{
+	background-image: url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6685b7ad96a05ae420e410e5_IEMI-nummer-icon.svg");
+}
+/* Base styles for input and dropdown */
+.claim_form_dropdown {
+  background-repeat: no-repeat;
+  padding-left: 2.5rem; /* Add space for the left icon */
+}
+/* Specific styles for select element */
+select.claim_form_dropdown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6685b7adac6504e29765dcd4_Product-icon.svg"), url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6685b7adf1bdb84eb83dbd77_Dropdown-icon.svg");
+  background-position: 1.25rem center, right 1.25rem center;
+  background-size: 1.25rem, 1rem; /* Set different sizes for the icons */
+  padding-right: 2.5rem; /* Add space for the right icon */
+}
+/* Apply existing styles to input */
+input[claim-input="product-group"], [data-name="product-group"] {
+  background-image: url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6685b7adac6504e29765dcd4_Product-icon.svg");
+  background-position: 1.25rem center;
+  text-indent: 0.75rem;
 }
 </style>
     </div>
