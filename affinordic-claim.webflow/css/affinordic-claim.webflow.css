@@ -929,6 +929,17 @@ figcaption {
   cursor: not-allowed;
 }
 
+.button.is-search {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  bottom: auto;
+  left: auto;
+  right: 0%;
+}
+
 .text-weight-normal {
   font-weight: 400;
 }
@@ -1850,6 +1861,11 @@ figcaption {
   color: #a0a6b0;
 }
 
+.claim_form_search-input_wrapper {
+  justify-self: stretch;
+  position: relative;
+}
+
 @media screen and (max-width: 991px) {
   h1 {
     font-size: 3.25rem;
@@ -2379,6 +2395,11 @@ figcaption {
     max-width: none;
   }
 
+  .button.is-search {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .claim_form_input.span-2-column {
     grid-column: span 1;
   }
@@ -2457,6 +2478,10 @@ figcaption {
   .claim_form_error-message_text {
     background-position: 0 5%;
   }
+}
+
+#w-node-b5ed1b47-d50d-d94e-8a70-5d93961490fb-cacb7d88 {
+  justify-self: stretch;
 }
 
 #w-node-_336be75c-ab2b-838b-5642-972b6cc8621b-cacb7da0 {
