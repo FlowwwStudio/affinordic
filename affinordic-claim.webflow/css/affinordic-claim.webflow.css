@@ -940,6 +940,14 @@ figcaption {
   right: 0%;
 }
 
+.button.is-cancel {
+  position: absolute;
+  top: 2.5rem;
+  bottom: auto;
+  left: auto;
+  right: 2.5rem;
+}
+
 .text-weight-normal {
   font-weight: 400;
 }
