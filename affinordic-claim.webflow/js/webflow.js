@@ -12846,6 +12846,658 @@
     }
   });
 
+  // packages/shared/render/plugins/Slider/webflow-slider.js
+  var require_webflow_slider = __commonJS({
+    "packages/shared/render/plugins/Slider/webflow-slider.js"(exports, module) {
+      "use strict";
+      var Webflow = require_webflow_lib();
+      var IXEvents = require_webflow_ix2_events();
+      var KEY_CODES = {
+        ARROW_LEFT: 37,
+        ARROW_UP: 38,
+        ARROW_RIGHT: 39,
+        ARROW_DOWN: 40,
+        SPACE: 32,
+        ENTER: 13,
+        HOME: 36,
+        END: 35
+      };
+      var FOCUSABLE_SELECTOR = 'a[href], area[href], [role="button"], input, select, textarea, button, iframe, object, embed, *[tabindex], *[contenteditable]';
+      Webflow.define("slider", module.exports = function($, _) {
+        var api = {};
+        var tram = $.tram;
+        var $doc = $(document);
+        var $sliders;
+        var designer;
+        var inApp = Webflow.env();
+        var namespace = ".w-slider";
+        var dot = '<div class="w-slider-dot" data-wf-ignore />';
+        var ariaLiveLabelHtml = '<div aria-live="off" aria-atomic="true" class="w-slider-aria-label" data-wf-ignore />';
+        var forceShow = "w-slider-force-show";
+        var ix = IXEvents.triggers;
+        var fallback;
+        var inRedraw = false;
+        api.ready = function() {
+          designer = Webflow.env("design");
+          init();
+        };
+        api.design = function() {
+          designer = true;
+          setTimeout(init, 1e3);
+        };
+        api.preview = function() {
+          designer = false;
+          init();
+        };
+        api.redraw = function() {
+          inRedraw = true;
+          init();
+          inRedraw = false;
+        };
+        api.destroy = removeListeners;
+        function init() {
+          $sliders = $doc.find(namespace);
+          if (!$sliders.length) {
+            return;
+          }
+          $sliders.each(build);
+          if (fallback) {
+            return;
+          }
+          removeListeners();
+          addListeners();
+        }
+        function removeListeners() {
+          Webflow.resize.off(renderAll);
+          Webflow.redraw.off(api.redraw);
+        }
+        function addListeners() {
+          Webflow.resize.on(renderAll);
+          Webflow.redraw.on(api.redraw);
+        }
+        function renderAll() {
+          $sliders.filter(":visible").each(render);
+        }
+        function build(i, el) {
+          var $el = $(el);
+          var data = $.data(el, namespace);
+          if (!data) {
+            data = $.data(el, namespace, {
+              index: 0,
+              depth: 1,
+              hasFocus: {
+                keyboard: false,
+                mouse: false
+              },
+              el: $el,
+              config: {}
+            });
+          }
+          data.mask = $el.children(".w-slider-mask");
+          data.left = $el.children(".w-slider-arrow-left");
+          data.right = $el.children(".w-slider-arrow-right");
+          data.nav = $el.children(".w-slider-nav");
+          data.slides = data.mask.children(".w-slide");
+          data.slides.each(ix.reset);
+          if (inRedraw) {
+            data.maskWidth = 0;
+          }
+          if ($el.attr("role") === void 0) {
+            $el.attr("role", "region");
+          }
+          if ($el.attr("aria-label") === void 0) {
+            $el.attr("aria-label", "carousel");
+          }
+          var slideViewId = data.mask.attr("id");
+          if (!slideViewId) {
+            slideViewId = "w-slider-mask-" + i;
+            data.mask.attr("id", slideViewId);
+          }
+          if (!designer && !data.ariaLiveLabel) {
+            data.ariaLiveLabel = $(ariaLiveLabelHtml).appendTo(data.mask);
+          }
+          data.left.attr("role", "button");
+          data.left.attr("tabindex", "0");
+          data.left.attr("aria-controls", slideViewId);
+          if (data.left.attr("aria-label") === void 0) {
+            data.left.attr("aria-label", "previous slide");
+          }
+          data.right.attr("role", "button");
+          data.right.attr("tabindex", "0");
+          data.right.attr("aria-controls", slideViewId);
+          if (data.right.attr("aria-label") === void 0) {
+            data.right.attr("aria-label", "next slide");
+          }
+          if (!tram.support.transform) {
+            data.left.hide();
+            data.right.hide();
+            data.nav.hide();
+            fallback = true;
+            return;
+          }
+          data.el.off(namespace);
+          data.left.off(namespace);
+          data.right.off(namespace);
+          data.nav.off(namespace);
+          configure(data);
+          if (designer) {
+            data.el.on("setting" + namespace, handler(data));
+            stopTimer(data);
+            data.hasTimer = false;
+          } else {
+            data.el.on("swipe" + namespace, handler(data));
+            data.left.on("click" + namespace, previousFunction(data));
+            data.right.on("click" + namespace, next(data));
+            data.left.on("keydown" + namespace, keyboardSlideButtonsFunction(data, previousFunction));
+            data.right.on("keydown" + namespace, keyboardSlideButtonsFunction(data, next));
+            data.nav.on("keydown" + namespace, "> div", handler(data));
+            if (data.config.autoplay && !data.hasTimer) {
+              data.hasTimer = true;
+              data.timerCount = 1;
+              startTimer(data);
+            }
+            data.el.on("mouseenter" + namespace, hasFocus(data, true, "mouse"));
+            data.el.on("focusin" + namespace, hasFocus(data, true, "keyboard"));
+            data.el.on("mouseleave" + namespace, hasFocus(data, false, "mouse"));
+            data.el.on("focusout" + namespace, hasFocus(data, false, "keyboard"));
+          }
+          data.nav.on("click" + namespace, "> div", handler(data));
+          if (!inApp) {
+            data.mask.contents().filter(function() {
+              return this.nodeType === 3;
+            }).remove();
+          }
+          var $elHidden = $el.filter(":hidden");
+          $elHidden.addClass(forceShow);
+          var $elHiddenParents = $el.parents(":hidden");
+          $elHiddenParents.addClass(forceShow);
+          if (!inRedraw) {
+            render(i, el);
+          }
+          $elHidden.removeClass(forceShow);
+          $elHiddenParents.removeClass(forceShow);
+        }
+        function configure(data) {
+          var config = {};
+          config.crossOver = 0;
+          config.animation = data.el.attr("data-animation") || "slide";
+          if (config.animation === "outin") {
+            config.animation = "cross";
+            config.crossOver = 0.5;
+          }
+          config.easing = data.el.attr("data-easing") || "ease";
+          var duration = data.el.attr("data-duration");
+          config.duration = duration != null ? parseInt(duration, 10) : 500;
+          if (isAttrTrue(data.el.attr("data-infinite"))) {
+            config.infinite = true;
+          }
+          if (isAttrTrue(data.el.attr("data-disable-swipe"))) {
+            config.disableSwipe = true;
+          }
+          if (isAttrTrue(data.el.attr("data-hide-arrows"))) {
+            config.hideArrows = true;
+          } else if (data.config.hideArrows) {
+            data.left.show();
+            data.right.show();
+          }
+          if (isAttrTrue(data.el.attr("data-autoplay"))) {
+            config.autoplay = true;
+            config.delay = parseInt(data.el.attr("data-delay"), 10) || 2e3;
+            config.timerMax = parseInt(data.el.attr("data-autoplay-limit"), 10);
+            var touchEvents = "mousedown" + namespace + " touchstart" + namespace;
+            if (!designer) {
+              data.el.off(touchEvents).one(touchEvents, function() {
+                stopTimer(data);
+              });
+            }
+          }
+          var arrowWidth = data.right.width();
+          config.edge = arrowWidth ? arrowWidth + 40 : 100;
+          data.config = config;
+        }
+        function isAttrTrue(value) {
+          return value === "1" || value === "true";
+        }
+        function hasFocus(data, focusIn, eventType) {
+          return function(evt) {
+            if (!focusIn) {
+              if ($.contains(data.el.get(0), evt.relatedTarget)) {
+                return;
+              }
+              data.hasFocus[eventType] = focusIn;
+              if (data.hasFocus.mouse && eventType === "keyboard" || data.hasFocus.keyboard && eventType === "mouse") {
+                return;
+              }
+            } else {
+              data.hasFocus[eventType] = focusIn;
+            }
+            if (focusIn) {
+              data.ariaLiveLabel.attr("aria-live", "polite");
+              if (data.hasTimer) {
+                stopTimer(data);
+              }
+            } else {
+              data.ariaLiveLabel.attr("aria-live", "off");
+              if (data.hasTimer) {
+                startTimer(data);
+              }
+            }
+            return;
+          };
+        }
+        function keyboardSlideButtonsFunction(data, directionFunction) {
+          return function(evt) {
+            switch (evt.keyCode) {
+              case KEY_CODES.SPACE:
+              case KEY_CODES.ENTER: {
+                directionFunction(data)();
+                evt.preventDefault();
+                return evt.stopPropagation();
+              }
+            }
+          };
+        }
+        function previousFunction(data) {
+          return function() {
+            change(data, {
+              index: data.index - 1,
+              vector: -1
+            });
+          };
+        }
+        function next(data) {
+          return function() {
+            change(data, {
+              index: data.index + 1,
+              vector: 1
+            });
+          };
+        }
+        function select(data, value) {
+          var found = null;
+          if (value === data.slides.length) {
+            init();
+            layout(data);
+          }
+          _.each(data.anchors, function(anchor, index) {
+            $(anchor.els).each(function(i, el) {
+              if ($(el).index() === value) {
+                found = index;
+              }
+            });
+          });
+          if (found != null) {
+            change(data, {
+              index: found,
+              immediate: true
+            });
+          }
+        }
+        function startTimer(data) {
+          stopTimer(data);
+          var config = data.config;
+          var timerMax = config.timerMax;
+          if (timerMax && data.timerCount++ > timerMax) {
+            return;
+          }
+          data.timerId = window.setTimeout(function() {
+            if (data.timerId == null || designer) {
+              return;
+            }
+            next(data)();
+            startTimer(data);
+          }, config.delay);
+        }
+        function stopTimer(data) {
+          window.clearTimeout(data.timerId);
+          data.timerId = null;
+        }
+        function handler(data) {
+          return function(evt, options) {
+            options = options || {};
+            var config = data.config;
+            if (designer && evt.type === "setting") {
+              if (options.select === "prev") {
+                return previousFunction(data)();
+              }
+              if (options.select === "next") {
+                return next(data)();
+              }
+              configure(data);
+              layout(data);
+              if (options.select == null) {
+                return;
+              }
+              select(data, options.select);
+              return;
+            }
+            if (evt.type === "swipe") {
+              if (config.disableSwipe) {
+                return;
+              }
+              if (Webflow.env("editor")) {
+                return;
+              }
+              if (options.direction === "left") {
+                return next(data)();
+              }
+              if (options.direction === "right") {
+                return previousFunction(data)();
+              }
+              return;
+            }
+            if (data.nav.has(evt.target).length) {
+              var index = $(evt.target).index();
+              if (evt.type === "click") {
+                change(data, {
+                  index
+                });
+              }
+              if (evt.type === "keydown") {
+                switch (evt.keyCode) {
+                  case KEY_CODES.ENTER:
+                  case KEY_CODES.SPACE: {
+                    change(data, {
+                      index
+                    });
+                    evt.preventDefault();
+                    break;
+                  }
+                  case KEY_CODES.ARROW_LEFT:
+                  case KEY_CODES.ARROW_UP: {
+                    focusDot(data.nav, Math.max(index - 1, 0));
+                    evt.preventDefault();
+                    break;
+                  }
+                  case KEY_CODES.ARROW_RIGHT:
+                  case KEY_CODES.ARROW_DOWN: {
+                    focusDot(data.nav, Math.min(index + 1, data.pages));
+                    evt.preventDefault();
+                    break;
+                  }
+                  case KEY_CODES.HOME: {
+                    focusDot(data.nav, 0);
+                    evt.preventDefault();
+                    break;
+                  }
+                  case KEY_CODES.END: {
+                    focusDot(data.nav, data.pages);
+                    evt.preventDefault();
+                    break;
+                  }
+                  default: {
+                    return;
+                  }
+                }
+              }
+            }
+          };
+        }
+        function focusDot($nav, index) {
+          var $active = $nav.children().eq(index).focus();
+          $nav.children().not($active);
+        }
+        function change(data, options) {
+          options = options || {};
+          var config = data.config;
+          var anchors = data.anchors;
+          data.previous = data.index;
+          var index = options.index;
+          var shift = {};
+          if (index < 0) {
+            index = anchors.length - 1;
+            if (config.infinite) {
+              shift.x = -data.endX;
+              shift.from = 0;
+              shift.to = anchors[0].width;
+            }
+          } else if (index >= anchors.length) {
+            index = 0;
+            if (config.infinite) {
+              shift.x = anchors[anchors.length - 1].width;
+              shift.from = -anchors[anchors.length - 1].x;
+              shift.to = shift.from - shift.x;
+            }
+          }
+          data.index = index;
+          var $active = data.nav.children().eq(index).addClass("w-active").attr("aria-pressed", "true").attr("tabindex", "0");
+          data.nav.children().not($active).removeClass("w-active").attr("aria-pressed", "false").attr("tabindex", "-1");
+          if (config.hideArrows) {
+            data.index === anchors.length - 1 ? data.right.hide() : data.right.show();
+            data.index === 0 ? data.left.hide() : data.left.show();
+          }
+          var lastOffsetX = data.offsetX || 0;
+          var offsetX = data.offsetX = -anchors[data.index].x;
+          var resetConfig = {
+            x: offsetX,
+            opacity: 1,
+            visibility: ""
+          };
+          var targets = $(anchors[data.index].els);
+          var prevTargs = $(anchors[data.previous] && anchors[data.previous].els);
+          var others = data.slides.not(targets);
+          var animation = config.animation;
+          var easing = config.easing;
+          var duration = Math.round(config.duration);
+          var vector = options.vector || (data.index > data.previous ? 1 : -1);
+          var fadeRule = "opacity " + duration + "ms " + easing;
+          var slideRule = "transform " + duration + "ms " + easing;
+          targets.find(FOCUSABLE_SELECTOR).removeAttr("tabindex");
+          targets.removeAttr("aria-hidden");
+          targets.find("*").removeAttr("aria-hidden");
+          others.find(FOCUSABLE_SELECTOR).attr("tabindex", "-1");
+          others.attr("aria-hidden", "true");
+          others.find("*").attr("aria-hidden", "true");
+          if (!designer) {
+            targets.each(ix.intro);
+            others.each(ix.outro);
+          }
+          if (options.immediate && !inRedraw) {
+            tram(targets).set(resetConfig);
+            resetOthers();
+            return;
+          }
+          if (data.index === data.previous) {
+            return;
+          }
+          if (!designer) {
+            data.ariaLiveLabel.text(`Slide ${index + 1} of ${anchors.length}.`);
+          }
+          if (animation === "cross") {
+            var reduced = Math.round(duration - duration * config.crossOver);
+            var wait = Math.round(duration - reduced);
+            fadeRule = "opacity " + reduced + "ms " + easing;
+            tram(prevTargs).set({
+              visibility: ""
+            }).add(fadeRule).start({
+              opacity: 0
+            });
+            tram(targets).set({
+              visibility: "",
+              x: offsetX,
+              opacity: 0,
+              zIndex: data.depth++
+            }).add(fadeRule).wait(wait).then({
+              opacity: 1
+            }).then(resetOthers);
+            return;
+          }
+          if (animation === "fade") {
+            tram(prevTargs).set({
+              visibility: ""
+            }).stop();
+            tram(targets).set({
+              visibility: "",
+              x: offsetX,
+              opacity: 0,
+              zIndex: data.depth++
+            }).add(fadeRule).start({
+              opacity: 1
+            }).then(resetOthers);
+            return;
+          }
+          if (animation === "over") {
+            resetConfig = {
+              x: data.endX
+            };
+            tram(prevTargs).set({
+              visibility: ""
+            }).stop();
+            tram(targets).set({
+              visibility: "",
+              zIndex: data.depth++,
+              x: offsetX + anchors[data.index].width * vector
+            }).add(slideRule).start({
+              x: offsetX
+            }).then(resetOthers);
+            return;
+          }
+          if (config.infinite && shift.x) {
+            tram(data.slides.not(prevTargs)).set({
+              visibility: "",
+              x: shift.x
+            }).add(slideRule).start({
+              x: offsetX
+            });
+            tram(prevTargs).set({
+              visibility: "",
+              x: shift.from
+            }).add(slideRule).start({
+              x: shift.to
+            });
+            data.shifted = prevTargs;
+          } else {
+            if (config.infinite && data.shifted) {
+              tram(data.shifted).set({
+                visibility: "",
+                x: lastOffsetX
+              });
+              data.shifted = null;
+            }
+            tram(data.slides).set({
+              visibility: ""
+            }).add(slideRule).start({
+              x: offsetX
+            });
+          }
+          function resetOthers() {
+            targets = $(anchors[data.index].els);
+            others = data.slides.not(targets);
+            if (animation !== "slide") {
+              resetConfig.visibility = "hidden";
+            }
+            tram(others).set(resetConfig);
+          }
+        }
+        function render(i, el) {
+          var data = $.data(el, namespace);
+          if (!data) {
+            return;
+          }
+          if (maskChanged(data)) {
+            return layout(data);
+          }
+          if (designer && slidesChanged(data)) {
+            layout(data);
+          }
+        }
+        function layout(data) {
+          var pages = 1;
+          var offset = 0;
+          var anchor = 0;
+          var width = 0;
+          var maskWidth = data.maskWidth;
+          var threshold = maskWidth - data.config.edge;
+          if (threshold < 0) {
+            threshold = 0;
+          }
+          data.anchors = [{
+            els: [],
+            x: 0,
+            width: 0
+          }];
+          data.slides.each(function(i, el) {
+            if (anchor - offset > threshold) {
+              pages++;
+              offset += maskWidth;
+              data.anchors[pages - 1] = {
+                els: [],
+                x: anchor,
+                width: 0
+              };
+            }
+            width = $(el).outerWidth(true);
+            anchor += width;
+            data.anchors[pages - 1].width += width;
+            data.anchors[pages - 1].els.push(el);
+            var ariaLabel = i + 1 + " of " + data.slides.length;
+            $(el).attr("aria-label", ariaLabel);
+            $(el).attr("role", "group");
+          });
+          data.endX = anchor;
+          if (designer) {
+            data.pages = null;
+          }
+          if (data.nav.length && data.pages !== pages) {
+            data.pages = pages;
+            buildNav(data);
+          }
+          var index = data.index;
+          if (index >= pages) {
+            index = pages - 1;
+          }
+          change(data, {
+            immediate: true,
+            index
+          });
+        }
+        function buildNav(data) {
+          var dots = [];
+          var $dot;
+          var spacing = data.el.attr("data-nav-spacing");
+          if (spacing) {
+            spacing = parseFloat(spacing) + "px";
+          }
+          for (var i = 0, len = data.pages; i < len; i++) {
+            $dot = $(dot);
+            $dot.attr("aria-label", "Show slide " + (i + 1) + " of " + len).attr("aria-pressed", "false").attr("role", "button").attr("tabindex", "-1");
+            if (data.nav.hasClass("w-num")) {
+              $dot.text(i + 1);
+            }
+            if (spacing != null) {
+              $dot.css({
+                "margin-left": spacing,
+                "margin-right": spacing
+              });
+            }
+            dots.push($dot);
+          }
+          data.nav.empty().append(dots);
+        }
+        function maskChanged(data) {
+          var maskWidth = data.mask.width();
+          if (data.maskWidth !== maskWidth) {
+            data.maskWidth = maskWidth;
+            return true;
+          }
+          return false;
+        }
+        function slidesChanged(data) {
+          var slidesWidth = 0;
+          data.slides.each(function(i, el) {
+            slidesWidth += $(el).outerWidth(true);
+          });
+          if (data.slidesWidth !== slidesWidth) {
+            data.slidesWidth = slidesWidth;
+            return true;
+          }
+          return false;
+        }
+        return api;
+      });
+    }
+  });
+
   // <stdin>
   require_webflow_brand();
   require_webflow_focus_visible();
@@ -12856,6 +13508,7 @@
   require_webflow_scroll();
   require_webflow_touch();
   require_webflow_forms();
+  require_webflow_slider();
 })();
 /*!
  * tram.js v0.8.2-global
