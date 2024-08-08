@@ -16,7 +16,7 @@
   --schemes--on-secondary-container: #dbecff;
   --schemes--inverse-primary: #9eccf1;
   --schemes--on-surface-variant: #41474d;
-  --surfaces--surface-tint-18: rgba(52, 99, 131, .18);
+  --surfaces--surface-tint-18: #3463832e;
   --schemes--error: #ba1a1a;
   --background-color--background-secondary\<deleted\|relume-variable-background-color-2\>: var(--color-neutral--neutral-lightest\<deleted\|relume-variable-color-neutral-3\>);
   --link-color--link-alternate\<deleted\|relume-variable-link-color-3\>: var(--color-neutral--white\<deleted\|relume-variable-color-neutral-2\>);
@@ -58,10 +58,10 @@
   --schemes--surface-container-high: #e8e8eb;
   --schemes--tertiary-fixed-dim: #e3b8ea;
   --schemes--surface-container-highest: #e2e2e5;
-  --surfaces--surface-tint-8: rgba(52, 99, 131, .08);
-  --surfaces--surface-tint-11: rgba(52, 99, 131, .11);
-  --surfaces--surface-tint-5: rgba(52, 99, 131, .05);
-  --surfaces--surface-tint-12: rgba(52, 99, 131, .12);
+  --surfaces--surface-tint-8: #34638314;
+  --surfaces--surface-tint-11: #3463831c;
+  --surfaces--surface-tint-5: #3463830d;
+  --surfaces--surface-tint-12: #3463831f;
   --palettes--primary-100: #fff;
   --palettes--primary-98: #f6f9ff;
   --palettes--primary-95: #e6f2ff;
@@ -377,10 +377,7 @@ figcaption {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 0%;
-  bottom: 0%;
-  left: 0%;
-  right: 0%;
+  inset: 0%;
 }
 
 .overflow-hidden {
@@ -390,10 +387,7 @@ figcaption {
 .global-styles {
   display: block;
   position: fixed;
-  top: 0%;
-  bottom: auto;
-  left: 0%;
-  right: auto;
+  inset: 0% auto auto 0%;
 }
 
 .z-index-1 {
@@ -850,7 +844,7 @@ figcaption {
 
 .button.is-link {
   color: var(--color-neutral--black\<deleted\|relume-variable-color-neutral-1\>);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #0000;
   border-style: none;
   padding: .25rem 0;
   line-height: 1;
@@ -859,7 +853,7 @@ figcaption {
 
 .button.is-link.is-alternate {
   color: var(--color-neutral--white\<deleted\|relume-variable-color-neutral-2\>);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #0000;
 }
 
 .button.is-link.is-icon {
@@ -887,7 +881,7 @@ figcaption {
 
 .button.is-secondary.is-alternate {
   color: var(--color-neutral--white\<deleted\|relume-variable-color-neutral-2\>);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #0000;
 }
 
 .button.is-small {
@@ -906,8 +900,8 @@ figcaption {
 
 .button.is-tertiary {
   color: var(--schemes--on-surface);
-  background-color: rgba(0, 0, 0, 0);
-  border-color: rgba(0, 0, 0, 0);
+  background-color: #0000;
+  border-color: #0000;
 }
 
 .button.is-tertiary:hover {
@@ -934,18 +928,12 @@ figcaption {
   border-bottom-left-radius: 0;
   height: 100%;
   position: absolute;
-  top: 0%;
-  bottom: auto;
-  left: auto;
-  right: 0%;
+  inset: 0% 0% auto auto;
 }
 
 .button.is-cancel {
   position: absolute;
-  top: 2.5rem;
-  bottom: auto;
-  left: auto;
-  right: 2.5rem;
+  inset: 2.5rem 2.5rem auto auto;
 }
 
 .text-weight-normal {
@@ -978,10 +966,8 @@ figcaption {
   grid-template-rows: auto;
   grid-template-columns: 1fr;
   grid-auto-columns: 1fr;
-  align-content: start;
-  justify-content: start;
-  align-items: start;
-  justify-items: start;
+  place-content: start;
+  place-items: start;
   padding-bottom: 1rem;
   display: grid;
 }
@@ -1012,7 +998,7 @@ figcaption {
 
 .rl-styleguide_label.is-html-tag {
   color: #bb4198;
-  background-color: rgba(190, 74, 165, .1);
+  background-color: #be4aa51a;
 }
 
 .text-size-regular {
@@ -1092,8 +1078,7 @@ figcaption {
   grid-template-columns: auto;
   grid-auto-columns: max-content;
   grid-auto-flow: row;
-  align-items: center;
-  justify-items: start;
+  place-items: center start;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   display: grid;
@@ -1392,7 +1377,6 @@ figcaption {
   border-radius: .75rem;
   margin-top: 1rem;
   padding: .5rem;
-  position: -webkit-sticky;
   position: sticky;
   top: 1rem;
 }
@@ -1560,8 +1544,7 @@ figcaption {
   grid-template-rows: auto;
   grid-template-columns: 1fr;
   grid-auto-columns: 1fr;
-  align-items: start;
-  justify-items: center;
+  place-items: start center;
   margin-top: 2rem;
   margin-bottom: 2rem;
   display: grid;
@@ -1574,16 +1557,14 @@ figcaption {
 .claim_form_selection-container.is-3-column {
   grid-row-gap: 1rem;
   grid-template-columns: 1fr 1fr 1fr;
-  align-items: start;
-  justify-items: stretch;
+  place-items: start stretch;
 }
 
 .claim_form_selection-container.is-4-cloumn {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
   grid-auto-flow: row dense;
-  align-items: stretch;
-  justify-items: stretch;
+  place-items: stretch stretch;
 }
 
 .claim_form_radio1 {
@@ -1678,10 +1659,7 @@ figcaption {
 
 .claim_form_cancle-container {
   position: absolute;
-  top: 2.5rem;
-  bottom: auto;
-  left: auto;
-  right: 2.5rem;
+  inset: 2.5rem 2.5rem auto auto;
 }
 
 .claim_form_radio2 {
@@ -1692,7 +1670,7 @@ figcaption {
   cursor: pointer;
   border-radius: .19rem;
   flex-flow: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   min-width: 14.5rem;
   max-width: 27rem;
@@ -1783,10 +1761,7 @@ figcaption {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0%;
-  bottom: 0%;
-  left: 0%;
-  right: 0%;
+  inset: 0%;
 }
 
 .claim_info_content-right {
@@ -1898,7 +1873,7 @@ figcaption {
   padding: 12px 16px 12px 52px;
   font-size: 14px;
   transition: all .25s;
-  box-shadow: 1px 1px 2px rgba(114, 129, 167, .04);
+  box-shadow: 1px 1px 2px #7281a70a;
 }
 
 .date-field:hover {
@@ -1944,7 +1919,7 @@ figcaption {
 }
 
 .claim_prototype-slider {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #0000;
   width: 100%;
   height: 100%;
 }
@@ -1956,10 +1931,7 @@ figcaption {
 .claim_prototype_back-btn {
   width: 6.4rem;
   height: 3rem;
-  top: auto;
-  bottom: 6.8rem;
-  left: 2.5rem;
-  right: auto;
+  inset: auto auto 6.8rem 2.5rem;
 }
 
 .claim_prototype_back-btn.button {
@@ -1970,10 +1942,7 @@ figcaption {
 .claim_prototype_forward-btn {
   width: 6.4rem;
   height: 3rem;
-  top: auto;
-  bottom: 6.8rem;
-  left: auto;
-  right: 2.5rem;
+  inset: auto 2.5rem 6.8rem auto;
 }
 
 .claim_prototype_forward-btn.button.is-secondary {
@@ -1982,10 +1951,7 @@ figcaption {
 }
 
 .claim_prototype_nav {
-  top: auto;
-  bottom: 13%;
-  left: 10rem;
-  right: 10rem;
+  inset: auto 10rem 13%;
 }
 
 .claim_footer {
@@ -1998,9 +1964,42 @@ figcaption {
   display: flex;
 }
 
+.claim_text-rich-text h1 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.claim_text-rich-text blockquote {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.claim_text-rich-text h2, .claim_text-rich-text h3, .claim_text-rich-text h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.claim_text-rich-text h5, .claim_text-rich-text h6 {
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.claim_text-rich-text p {
+  margin-bottom: 1rem;
+}
+
+.claim_text-rich-text figcaption {
+  border-left: 2px solid var(--text-color--text-primary\<deleted\|relume-variable-text-color-1\>);
+  text-align: left;
+  margin-top: .5rem;
+  padding-left: .5rem;
+  font-size: .875rem;
+}
+
 @media screen and (min-width: 1280px) {
   .claim_form_selection-container.is-4-cloumn {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
