@@ -1037,6 +1037,7 @@ figcaption {
   background-color: var(--surfaces--surface-tint-18);
   color: var(--schemes--on-surface);
   border-radius: .19rem;
+  width: 100%;
   height: auto;
   min-height: 2.75rem;
   margin-bottom: 0;
@@ -1068,6 +1069,10 @@ figcaption {
 
 .claim_form_input.is-error {
   box-shadow: 0 0 0 2px var(--schemes--error);
+}
+
+.claim_form_input.is-file {
+  display: none;
 }
 
 .rl-styleguide_button-list {
