@@ -2527,6 +2527,7 @@
         OBJECT_VALUE: "OBJECT_VALUE",
         PLUGIN_LOTTIE: "PLUGIN_LOTTIE",
         PLUGIN_SPLINE: "PLUGIN_SPLINE",
+        PLUGIN_RIVE: "PLUGIN_RIVE",
         PLUGIN_VARIABLE: "PLUGIN_VARIABLE",
         GENERAL_DISPLAY: "GENERAL_DISPLAY",
         GENERAL_START_ACTION: "GENERAL_START_ACTION",
@@ -2808,7 +2809,9 @@
       "use strict";
       init_shared_constants();
       ({ IX2_RAW_DATA_IMPORTED: IX2_RAW_DATA_IMPORTED2 } = IX2EngineActionTypes_exports);
-      ixData = (state = Object.freeze({}), action) => {
+      ixData = (state = Object.freeze(
+        {}
+      ), action) => {
         switch (action.type) {
           case IX2_RAW_DATA_IMPORTED2: {
             return action.payload.ixData || Object.freeze({});
@@ -6042,6 +6045,134 @@
     }
   });
 
+  // packages/systems/ix2/plugins/IX2Rive.js
+  var require_IX2Rive = __commonJS({
+    "packages/systems/ix2/plugins/IX2Rive.js"(exports) {
+      "use strict";
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      function _export(target, all) {
+        for (var name in all)
+          Object.defineProperty(target, name, {
+            enumerable: true,
+            get: all[name]
+          });
+      }
+      _export(exports, {
+        clearPlugin: function() {
+          return clearPlugin2;
+        },
+        createPluginInstance: function() {
+          return createPluginInstance3;
+        },
+        getPluginConfig: function() {
+          return getPluginConfig2;
+        },
+        getPluginDestination: function() {
+          return getPluginDestination2;
+        },
+        getPluginDuration: function() {
+          return getPluginDuration3;
+        },
+        getPluginOrigin: function() {
+          return getPluginOrigin2;
+        },
+        renderPlugin: function() {
+          return renderPlugin2;
+        }
+      });
+      var FIT_KEY = "--wf-rive-fit";
+      var ALIGNMENT_KEY = "--wf-rive-alignment";
+      var queryContainerElement = (elementId) => document.querySelector(`[data-w-id="${elementId}"]`);
+      var getFrontendModule = () => window.Webflow.require("rive");
+      var getPluginConfig2 = (actionItemConfig, key) => actionItemConfig.value.inputs[key];
+      var getPluginDuration3 = () => null;
+      var getPluginOrigin2 = (refState2, actionItem) => {
+        if (refState2)
+          return refState2;
+        const result = {};
+        const { inputs = {} } = actionItem.config.value;
+        for (const input in inputs)
+          if (inputs[input] == null)
+            result[input] = 0;
+        return result;
+      };
+      var getPluginDestination2 = (actionItemConfig) => actionItemConfig.value.inputs ?? {};
+      var createPluginInstance3 = (element, actionItem) => {
+        const pluginElementId = actionItem?.config?.target?.pluginElement;
+        return pluginElementId ? queryContainerElement(pluginElementId) : null;
+      };
+      var renderPlugin2 = (containerElement, { PLUGIN_RIVE: props }, actionItem) => {
+        const frontendModule = getFrontendModule();
+        const instance = frontendModule.getInstance(containerElement);
+        const StateMachineInputType = frontendModule.rive.StateMachineInputType;
+        const { name, inputs = {} } = actionItem.config.value || {};
+        function renderRive(riveInstance) {
+          if (riveInstance.loaded) {
+            render();
+          } else {
+            const onLoad = () => {
+              render();
+              riveInstance?.off("load", onLoad);
+            };
+            riveInstance?.on("load", onLoad);
+          }
+          function render() {
+            const stateMachineInputs = riveInstance.stateMachineInputs(name);
+            if (stateMachineInputs == null)
+              return;
+            if (!riveInstance.isPlaying)
+              riveInstance.play(name, false);
+            if (FIT_KEY in inputs || ALIGNMENT_KEY in inputs) {
+              const currentLayout = riveInstance.layout;
+              const nextFit = inputs[FIT_KEY] ?? currentLayout.fit;
+              const nextAlignment = inputs[ALIGNMENT_KEY] ?? currentLayout.alignment;
+              if (nextFit !== currentLayout.fit || nextAlignment !== currentLayout.alignment) {
+                riveInstance.layout = currentLayout.copyWith({
+                  fit: nextFit,
+                  alignment: nextAlignment
+                });
+              }
+            }
+            for (const inputName in inputs) {
+              if (inputName === FIT_KEY || inputName === ALIGNMENT_KEY)
+                continue;
+              const machineInput = stateMachineInputs.find((m) => m.name === inputName);
+              if (machineInput == null)
+                continue;
+              switch (machineInput.type) {
+                case StateMachineInputType.Boolean: {
+                  if (inputs[inputName] != null) {
+                    const booleanValue = Boolean(inputs[inputName]);
+                    machineInput.value = booleanValue;
+                  }
+                  break;
+                }
+                case StateMachineInputType.Number: {
+                  const numberValue = props[inputName];
+                  if (numberValue != null)
+                    machineInput.value = numberValue;
+                  break;
+                }
+                case StateMachineInputType.Trigger: {
+                  if (inputs[inputName])
+                    machineInput.fire();
+                  break;
+                }
+              }
+            }
+          }
+        }
+        if (instance?.rive)
+          renderRive(instance.rive);
+        else
+          frontendModule.setLoadHandler(containerElement, renderRive);
+      };
+      var clearPlugin2 = (_containerElement, _actionItem) => null;
+    }
+  });
+
   // packages/systems/ix2/shared-utils/normalizeColor.js
   var require_normalizeColor = __commonJS({
     "packages/systems/ix2/shared-utils/normalizeColor.js"(exports) {
@@ -6439,6 +6570,7 @@
       var _sharedconstants = (init_shared_constants(), __toCommonJS(shared_constants_exports));
       var _IX2Lottie = /* @__PURE__ */ _interop_require_wildcard(require_IX2Lottie());
       var _IX2Spline = /* @__PURE__ */ _interop_require_wildcard(require_IX2Spline());
+      var _IX2Rive = /* @__PURE__ */ _interop_require_wildcard(require_IX2Rive());
       var _IX2Variable = /* @__PURE__ */ _interop_require_wildcard(require_IX2Variable());
       function _getRequireWildcardCache(nodeInterop) {
         if (typeof WeakMap !== "function")
@@ -6493,6 +6625,12 @@
           _sharedconstants.ActionTypeConsts.PLUGIN_SPLINE,
           {
             ..._IX2Spline
+          }
+        ],
+        [
+          _sharedconstants.ActionTypeConsts.PLUGIN_RIVE,
+          {
+            ..._IX2Rive
           }
         ],
         [
@@ -6797,7 +6935,11 @@
     }
     return "e" + elementCount++;
   }
-  function reifyState({ events, actionLists, site } = {}) {
+  function reifyState({
+    events,
+    actionLists,
+    site
+  } = {}) {
     const eventTypeMap = (0, import_reduce.default)(
       events,
       (result, event) => {
@@ -7502,7 +7644,11 @@
     });
     return totalDuration > 0 ? optimizeFloat(elapsedDuration / totalDuration) : 0;
   }
-  function reduceListToGroup({ actionList, actionItemId, rawData }) {
+  function reduceListToGroup({
+    actionList,
+    actionItemId,
+    rawData
+  }) {
     const { actionItemGroups, continuousParameterGroups } = actionList;
     const newActionItems = [];
     const takeItemUntilMatch = (actionItem) => {
@@ -7514,17 +7660,19 @@
       );
       return actionItem.id === actionItemId;
     };
-    actionItemGroups && // @ts-expect-error - TS7031 - Binding element 'actionItems' implicitly has an 'any' type.
-    actionItemGroups.some(({ actionItems }) => {
+    actionItemGroups && actionItemGroups.some(({ actionItems }) => {
       return actionItems.some(takeItemUntilMatch);
     });
-    continuousParameterGroups && // @ts-expect-error - TS7006 - Parameter 'paramGroup' implicitly has an 'any' type.
-    continuousParameterGroups.some((paramGroup) => {
-      const { continuousActionGroups } = paramGroup;
-      return continuousActionGroups.some(({ actionItems }) => {
-        return actionItems.some(takeItemUntilMatch);
-      });
-    });
+    continuousParameterGroups && continuousParameterGroups.some(
+      (paramGroup) => {
+        const { continuousActionGroups } = paramGroup;
+        return continuousActionGroups.some(
+          ({ actionItems }) => {
+            return actionItems.some(takeItemUntilMatch);
+          }
+        );
+      }
+    );
     return (0, import_timm4.setIn)(rawData, ["actionLists"], {
       [actionList.id]: {
         id: actionList.id,
@@ -8189,9 +8337,12 @@
       }, action) => {
         switch (action.type) {
           case IX2_RAW_DATA_IMPORTED4: {
-            return action.payload.ixParameters || {
-              /*mutable flat state*/
-            };
+            return (
+              // @ts-expect-error - Further investigation is needed as looks like IX2_RAW_DATA_IMPORTED is never triggered with ixParameters
+              action.payload.ixParameters || {
+                /*mutable flat state*/
+              }
+            );
           }
           case IX2_SESSION_STOPPED5: {
             return {
@@ -8229,7 +8380,6 @@
       init_IX2ParametersReducer();
       ({ ixElements: ixElements2 } = import_shared2.IX2ElementsReducer);
       IX2Reducer_default = (0, import_redux.combineReducers)({
-        // @ts-expect-error - TS2322 - Type '(state: FixMeAny | null | undefined, action: {    type: typeof IX2_RAW_DATA_IMPORTED;    payload: {        ixData: FixMeAny;    };}) => any' is not assignable to type 'Reducer<any>'.
         ixData,
         ixRequest,
         ixSession,
@@ -10267,34 +10417,39 @@
   function observeRequests(store) {
     observeStore2({
       store,
-      // @ts-expect-error - TS7031 - Binding element 'ixRequest' implicitly has an 'any' type.
-      select: ({ ixRequest: ixRequest2 }) => ixRequest2.preview,
+      select: ({
+        ixRequest: ixRequest2
+      }) => ixRequest2.preview,
       onChange: handlePreviewRequest
     });
     observeStore2({
       store,
-      // @ts-expect-error - TS7031 - Binding element 'ixRequest' implicitly has an 'any' type.
-      select: ({ ixRequest: ixRequest2 }) => ixRequest2.playback,
+      select: ({
+        ixRequest: ixRequest2
+      }) => ixRequest2.playback,
       onChange: handlePlaybackRequest
     });
     observeStore2({
       store,
-      // @ts-expect-error - TS7031 - Binding element 'ixRequest' implicitly has an 'any' type.
-      select: ({ ixRequest: ixRequest2 }) => ixRequest2.stop,
+      select: ({
+        ixRequest: ixRequest2
+      }) => ixRequest2.stop,
       onChange: handleStopRequest
     });
     observeStore2({
       store,
-      // @ts-expect-error - TS7031 - Binding element 'ixRequest' implicitly has an 'any' type.
-      select: ({ ixRequest: ixRequest2 }) => ixRequest2.clear,
+      select: ({
+        ixRequest: ixRequest2
+      }) => ixRequest2.clear,
       onChange: handleClearRequest
     });
   }
   function observeMediaQueryChange(store) {
     observeStore2({
       store,
-      // @ts-expect-error - TS7031 - Binding element 'ixSession' implicitly has an 'any' type.
-      select: ({ ixSession: ixSession2 }) => ixSession2.mediaQueryKey,
+      select: ({
+        ixSession: ixSession2
+      }) => ixSession2.mediaQueryKey,
       onChange: () => {
         stopEngine(store);
         clearAllStyles2({ store, elementApi: IX2BrowserApi_exports });
@@ -10306,8 +10461,9 @@
   function observeOneRenderTick(store, onTick) {
     const unsubscribe = observeStore2({
       store,
-      // @ts-expect-error - TS7031 - Binding element 'ixSession' implicitly has an 'any' type.
-      select: ({ ixSession: ixSession2 }) => ixSession2.tick,
+      select: ({
+        ixSession: ixSession2
+      }) => ixSession2.tick,
       // @ts-expect-error - TS7006 - Parameter 'tick' implicitly has an 'any' type.
       onChange: (tick) => {
         onTick(tick);
@@ -10377,7 +10533,12 @@
     stopEngine(store);
     clearAllStyles2({ store, elementApi: IX2BrowserApi_exports });
   }
-  function startEngine({ store, rawData, allowEvents, testManual }) {
+  function startEngine({
+    store,
+    rawData,
+    allowEvents,
+    testManual
+  }) {
     const { ixSession: ixSession2 } = store.getState();
     if (rawData) {
       store.dispatch(rawDataImported(rawData));
@@ -10553,6 +10714,7 @@
         return;
       }
       bindEventType({
+        // @ts-expect-error - TS7031 - Binding element 'logic' implicitly has an 'any' type.
         logic,
         store,
         events
@@ -10715,7 +10877,11 @@
       document.body.appendChild(style);
     }
   }
-  function renderInitialGroup({ store, actionListId, eventId }) {
+  function renderInitialGroup({
+    store,
+    actionListId,
+    eventId
+  }) {
     const { ixData: ixData2, ixSession: ixSession2 } = store.getState();
     const { actionLists, events } = ixData2;
     const event = events[eventId];
@@ -10735,7 +10901,12 @@
         const config = (
           // When useEventTarget is explicitly true, use event target/targets to query elements
           // However, skip this condition when objectId is defined
-          itemConfig?.target?.useEventTarget === true && itemConfig?.target?.objectId == null ? { target: event.target, targets: event.targets } : itemConfig
+          // @ts-expect-error - Property 'target' does not exist on type 'never'.
+          itemConfig?.target?.useEventTarget === true && // @ts-expect-error - Property 'target' does not exist on type 'never'.
+          itemConfig?.target?.objectId == null ? (
+            // @ts-expect-error - TS18048 - 'event' is possibly 'undefined'.
+            { target: event.target, targets: event.targets }
+          ) : itemConfig
         );
         const itemElements = getAffectedElements2({ config, event, elementApi: IX2BrowserApi_exports });
         const shouldUsePlugin = isPluginType2(actionTypeId);
@@ -11020,7 +11191,7 @@
     } = instance;
     const { ixData: ixData2, ixSession: ixSession2 } = store.getState();
     const { events } = ixData2;
-    const event = events[eventId] || {};
+    const event = events && events[eventId] ? events[eventId] : {};
     const { mediaQueries = ixData2.mediaQueryKeys } = event;
     if (!shouldAllowMediaQuery2(mediaQueries, ixSession2.mediaQueryKey)) {
       return;

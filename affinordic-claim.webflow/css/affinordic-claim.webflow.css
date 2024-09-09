@@ -31,37 +31,6 @@
   --schemes--error-container: #ffdad6;
   --schemes--on-error-container: #410002;
   --schemes--surface: #f9f9fc;
-  --schemes--surface-tint: #346383;
-  --schemes--tertiary: #75527d;
-  --schemes--on-tertiary: #fff;
-  --schemes--on-tertiary-container: #290b32;
-  --schemes--on-error: #fff;
-  --schemes--background: #f9f9fc;
-  --schemes--on-background: #1a1c1e;
-  --schemes--outline-variant: #c1c7ce;
-  --schemes--shadow: #000;
-  --schemes--scrim: #000;
-  --schemes--inverse-surface: #2e3133;
-  --schemes--primary-fixed: #cae6ff;
-  --schemes--on-primary-fixed: #001e30;
-  --schemes--primary-fixed-dim: #9eccf1;
-  --schemes--on-primary-fixed-variant: #174b6a;
-  --schemes--secondary-fixed: #cde5ff;
-  --schemes--secondary-fixed-dim: #a6caef;
-  --schemes--tertiary-fixed: #fad7ff;
-  --schemes--on-tertiary-fixed: #2c0e36;
-  --schemes--on-secondary-fixed-variant: #244a68;
-  --schemes--on-tertiary-fixed-variant: #5b3b64;
-  --schemes--surface-dim: #d9dadd;
-  --schemes--surface-bright: #f9f9fc;
-  --schemes--surface-container-low: #f3f3f6;
-  --schemes--surface-container-high: #e8e8eb;
-  --schemes--tertiary-fixed-dim: #e3b8ea;
-  --schemes--surface-container-highest: #e2e2e5;
-  --surfaces--surface-tint-8: #34638314;
-  --surfaces--surface-tint-11: #3463831c;
-  --surfaces--surface-tint-5: #3463830d;
-  --surfaces--surface-tint-12: #3463831f;
   --palettes--primary-100: #fff;
   --palettes--primary-98: #f6f9ff;
   --palettes--primary-95: #e6f2ff;
@@ -86,11 +55,9 @@
   --palettes--secondary-90: #cde5ff;
   --palettes--secondary-80: #a6caef;
   --palettes--secondary-70: #8bafd2;
-  --schemes--tertiary-container: #be96c6;
   --palettes--secondary-60: #7094b6;
   --palettes--secondary-95: #e8f2ff;
   --palettes--secondary-50: #567a9b;
-  --schemes--surface-container: #edeef0;
   --palettes--secondary-40: #3d6281;
   --palettes--secondary-30: #244a68;
   --palettes--secondary-25: #163e5c;
@@ -147,7 +114,6 @@
   --palettes--neutral-50: #777778;
   --palettes--neutral-40: #5e5e60;
   --palettes--neutral-35: #525254;
-  --schemes--on-secondary-fixed: #001d32;
   --palettes--neutral-30: #464748;
   --palettes--neutral-20: #2f3032;
   --palettes--neutral-15: #252627;
@@ -173,7 +139,41 @@
   --palettes--neutral-variant-10-2: #191c1f;
   --palettes--neutral-variant-5-2: #0e1114;
   --palettes--neutral-variant-0: #000;
+  --schemes--surface-tint: #346383;
+  --schemes--tertiary: #75527d;
+  --schemes--on-tertiary: #fff;
+  --schemes--on-tertiary-container: #290b32;
+  --schemes--on-error: #fff;
+  --schemes--background: #f9f9fc;
+  --schemes--on-background: #1a1c1e;
+  --schemes--outline-variant: #c1c7ce;
+  --schemes--shadow: #000;
+  --schemes--scrim: #000;
+  --schemes--inverse-surface: #2e3133;
+  --schemes--primary-fixed: #cae6ff;
+  --schemes--on-primary-fixed: #001e30;
+  --schemes--primary-fixed-dim: #9eccf1;
+  --schemes--on-primary-fixed-variant: #174b6a;
+  --schemes--secondary-fixed: #cde5ff;
+  --schemes--secondary-fixed-dim: #a6caef;
+  --schemes--tertiary-fixed: #fad7ff;
+  --schemes--on-tertiary-fixed: #2c0e36;
+  --schemes--on-secondary-fixed-variant: #244a68;
+  --schemes--on-tertiary-fixed-variant: #5b3b64;
+  --schemes--surface-dim: #d9dadd;
+  --schemes--surface-bright: #f9f9fc;
+  --schemes--surface-container-low: #f3f3f6;
+  --schemes--surface-container-high: #e8e8eb;
+  --schemes--tertiary-fixed-dim: #e3b8ea;
+  --schemes--surface-container-highest: #e2e2e5;
+  --schemes--tertiary-container: #be96c6;
+  --schemes--surface-container: #edeef0;
+  --schemes--on-secondary-fixed: #001d32;
   --schemes--outline-fixed: #cae6ff;
+  --surfaces--surface-tint-8: #34638314;
+  --surfaces--surface-tint-11: #3463831c;
+  --surfaces--surface-tint-5: #3463830d;
+  --surfaces--surface-tint-12: #3463831f;
   --color-neutral--neutral-lightest\<deleted\|relume-variable-color-neutral-3\>: #eee;
   --color-system--success-green-light\<deleted\|relume-variable-system-color-2\>: #ecfdf3;
   --color-system--success-green\<deleted\|relume-variable-system-color-1\>: #027a48;
@@ -2627,6 +2627,10 @@ figcaption {
 
   .claim_form_error-message_text {
     background-position: 0 5%;
+  }
+
+  .claim_form_search-input_wrapper.span-2-column {
+    grid-column: span 1;
   }
 
   .claim_form_message.span-2-column {
