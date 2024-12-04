@@ -1898,6 +1898,10 @@ figcaption {
   position: relative;
 }
 
+.claim_form_search-input_wrapper.is-active {
+  opacity: 1;
+}
+
 .claim_form_message {
   background-color: var(--schemes--surface);
   outline-color: var(--schemes--outline);

@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Mon Sep 09 2024 16:58:25 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Wed Dec 04 2024 18:37:32 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="66221bcdb6a56b23cacb7d88" data-wf-site="66221bccb6a56b23cacb7d06" lang="en">
 <head>
   <meta charset="utf-8">
@@ -23,6 +23,15 @@
 }
 </style>
   <link rel="stylesheet" href="https://fengyuanchen.github.io/datepicker/css/datepicker.css">
+  <style>
+	[data-hidden="target"] {
+  	opacity: 0;
+    transition: opacity 300ms ease;
+  }
+  [data-hidden="target"].is-active {
+  	opacity: 1; 
+  }
+</style>
 </head>
 <body>
   <div class="page-wrapper">
@@ -397,8 +406,8 @@ input[claim-input="product-group"], [data-name="product-group"] {
                           <p>Produktets IMEI-nummer (Mobiltelefoner) eller serienummer (Alle andre produkttyper)</p>
                         </div>
                       </div>
-                      <div class="claim_form_selection-container is-2-column"><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/IMEI-number.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
+                      <div class="claim_form_selection-container is-2-column"><label data-hidden="trigger" class="claim_form_radio2">
+                          <div class="margin-bottom margin-xsmall"><img src="images/IMEI-number.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide">
                           <div>
                             <div class="text-weight-bold">IMEI-nummer</div>
                           </div>
@@ -414,8 +423,8 @@ input[claim-input="product-group"], [data-name="product-group"] {
                               </div>
                             </div>
                           </div>
-                        </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Serial-number.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
+                        </label><label data-hidden="trigger" class="claim_form_radio2">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Serial-number.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide">
                           <div>
                             <div class="text-weight-bold">Serie-nummeret</div>
                           </div>
@@ -432,7 +441,7 @@ input[claim-input="product-group"], [data-name="product-group"] {
                             </div>
                           </div>
                         </label>
-                        <div id="w-node-b5ed1b47-d50d-d94e-8a70-5d93961490fb-cacb7d88" class="claim_form_search-input_wrapper span-2-column"><input class="claim_form_input w-node-_24114ae6-d9df-b74a-247f-cc4be6632b17-cacb7d88 w-input" maxlength="256" name="field" data-name="Field" placeholder="Skriv nummeret her" claim-input="write" type="text" id="field" required=""><button class="button is-search">Søg</button></div>
+                        <div data-hidden="target" id="w-node-b5ed1b47-d50d-d94e-8a70-5d93961490fb-cacb7d88" class="claim_form_search-input_wrapper span-2-column"><input class="claim_form_input w-node-_24114ae6-d9df-b74a-247f-cc4be6632b17-cacb7d88 w-input" maxlength="256" name="field" data-name="Field" placeholder="Skriv nummeret her" claim-input="write" type="text" id="field" required=""><button class="button is-search">Søg</button></div>
                         <div class="claim_form_error-message span-2-column">
                           <div class="claim_form_error-message_text">Systemet kunne ikke finde dit produkt - udfyld venligst de påkrævede oplysninger på næste side</div>
                         </div>
@@ -523,7 +532,7 @@ input[claim-input="product-group"], [data-name="product-group"] {
                         </div>
                       </div>
                       <div class="claim_form_selection-container is-4-cloumn"><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Accident.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Accident.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide">
                           <div>
                             <div class="text-weight-bold">Uheld</div>
                           </div>
@@ -540,7 +549,7 @@ input[claim-input="product-group"], [data-name="product-group"] {
                             </div>
                           </div>
                         </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Malfunction.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Malfunction.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide">
                           <div>
                             <div class="text-weight-bold">Funktionsfejl</div>
                           </div>
@@ -557,7 +566,7 @@ input[claim-input="product-group"], [data-name="product-group"] {
                             </div>
                           </div>
                         </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Liquid.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Liquid.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide">
                           <div>
                             <div class="text-weight-bold">Væske</div>
                           </div>
@@ -574,7 +583,7 @@ input[claim-input="product-group"], [data-name="product-group"] {
                             </div>
                           </div>
                         </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Theft.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Theft.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide">
                           <div>
                             <div class="text-weight-bold">Tyveri</div>
                           </div>
@@ -583,7 +592,7 @@ input[claim-input="product-group"], [data-name="product-group"] {
                             <div class="claim_form_info-container"></div>
                           </div>
                         </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/termination-of-employment.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
+                          <div class="margin-bottom margin-xsmall"><img src="images/termination-of-employment.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide">
                           <div>
                             <div class="text-weight-bold">Ansættelsesophør</div>
                           </div>
@@ -592,7 +601,7 @@ input[claim-input="product-group"], [data-name="product-group"] {
                             <div class="claim_form_info-container"></div>
                           </div>
                         </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Lost-item.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Lost-item.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide">
                           <div>
                             <div class="text-weight-bold">Bortkommet</div>
                           </div>
@@ -609,7 +618,7 @@ input[claim-input="product-group"], [data-name="product-group"] {
                             </div>
                           </div>
                         </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Other.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Other.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide">
                           <div>
                             <div class="text-weight-bold">Andet</div>
                           </div>
@@ -667,7 +676,7 @@ input[claim-input="product-group"], [data-name="product-group"] {
                       </div>
                       <div class="max-width-small">
                         <div class="claim_form_selection-container"><label class="claim_form_radio2">
-                            <div class="margin-bottom margin-xsmall"><img src="images/Theft.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
+                            <div class="margin-bottom margin-xsmall"><img src="images/Theft.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide">
                             <div>
                               <div class="text-weight-bold">Tyveri</div>
                             </div>
@@ -702,7 +711,7 @@ input[claim-input="product-group"], [data-name="product-group"] {
                         </div>
                       </div>
                       <div class="max-width-small">
-                        <div class="claim_form_selection-container"><input class="claim_form_input w-node-_8deb2302-def4-edff-2550-2b66b7507ec6-cacb7d88 w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="Fornavn" claim-input="user" type="text" id="name-2" required=""><input class="claim_form_input w-input" maxlength="256" name="field-2" data-name="Field 2" placeholder="Telefonnr. efter fratrædelse" claim-input="phone" type="text" id="field-2" required=""><input class="claim_form_input w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="Email efter fretrædelse" claim-input="email" type="email" id="email-2" required=""><input class="claim_form_input w-input" maxlength="256" name="salary" data-name="salary" placeholder="Lønnr." claim-input="salary" type="text" id="salary" required=""><input class="claim_form_input w-input" maxlength="256" name="date" data-name="date" placeholder="Dato for fratrædelse" claim-input="date" type="text" id="date" required=""><input class="claim_form_input w-input" maxlength="256" name="date" data-name="date" placeholder="Dato for sidste lønudbetaling" claim-input="date" type="text" id="date-2" required=""><input class="claim_form_input w-input" maxlength="256" name="date" data-name="date" placeholder="Dato for første løntræk" claim-input="date" type="text" id="date-3" required=""></div>
+                        <div class="claim_form_selection-container"><input class="claim_form_input w-node-_8deb2302-def4-edff-2550-2b66b7507ec6-cacb7d88 w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="Fornavn" claim-input="user" type="text" id="name-2" required=""><input class="claim_form_input w-input" maxlength="256" name="field-2" data-name="Field 2" placeholder="Telefonnr. efter fratrædelse" claim-input="phone" type="text" id="field-2" required=""><input class="claim_form_input w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="Email efter fratrædelse" claim-input="email" type="email" id="email-2" required=""><input class="claim_form_input w-input" maxlength="256" name="salary" data-name="salary" placeholder="Lønnr." claim-input="salary" type="text" id="salary" required=""><input class="claim_form_input w-input" maxlength="256" name="date" data-name="date" placeholder="Dato for fratrædelse" claim-input="date" type="text" id="date" required=""><input class="claim_form_input w-input" maxlength="256" name="date" data-name="date" placeholder="Dato for sidste lønudbetaling" claim-input="date" type="text" id="date-2" required=""><input class="claim_form_input w-input" maxlength="256" name="date" data-name="date" placeholder="Dato for første løntræk" claim-input="date" type="text" id="date-3" required=""></div>
                       </div>
                       <div class="claim_form_bottom">
                         <a href="#" class="button w-button">Tilbage</a>
@@ -759,7 +768,7 @@ input[claim-input="product-group"], [data-name="product-group"] {
                         </div>
                       </div>
                       <div class="claim_form_selection-container is-2-column"><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Apple-icon.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Apple-icon.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide">
                           <div>
                             <div class="text-weight-bold">Apple</div>
                           </div>
@@ -773,7 +782,7 @@ input[claim-input="product-group"], [data-name="product-group"] {
                             </div>
                           </div>
                         </label><label class="claim_form_radio2">
-                          <div class="margin-bottom margin-xsmall"><img src="images/Andriod-logo.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" class="hide">
+                          <div class="margin-bottom margin-xsmall"><img src="images/Andriod-logo.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide">
                           <div>
                             <div class="text-weight-bold">Android</div>
                           </div>
@@ -960,6 +969,9 @@ input[claim-input="product-group"], [data-name="product-group"] {
             });
         });
     });
+    $('[data-hidden="trigger"]').on('click', function() {
+  	$(this).siblings('[data-hidden="target"]').css('opacity', '1');
+		});
 </script>
   <script src="https://fengyuanchen.github.io/datepicker/js/datepicker.js"></script>
   <script>
