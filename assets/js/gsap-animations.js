@@ -31,12 +31,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const delay = element.dataset.delay || defaults.fade.delay;
             const stagger = element.dataset.stagger || defaults.fade.stagger;
 
-            gsap.from(element, {
-                opacity: 0,
-                duration: parseFloat(duration),
-                delay: parseFloat(delay),
-                stagger: parseFloat(stagger),
-                scrollTrigger: {
+            gsap.fromTo(element, 
+                {
+                    opacity: 0,
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: parseFloat(duration),
+                    delay: parseFloat(delay),
+                    stagger: parseFloat(stagger),
+                    scrollTrigger: {
                     trigger: element,
                     start: 'top 90%',
                     toggleActions: 'play none none pause'
@@ -51,18 +56,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const stagger = element.dataset.stagger || defaults.slideUp.stagger;
             const distance = element.dataset.distance || defaults.slideUp.distance;
 
-            gsap.from(element, {
-                opacity: 0,
-                y: distance,
-                ease: 'power1.out',
-                duration: parseFloat(duration),
-                delay: parseFloat(delay),
-                stagger: parseFloat(stagger),
-                scrollTrigger: {
-                    trigger: element,
-                    start: 'top 90%',
-                    toggleActions: 'play none none pause'
-                }
+            gsap.fromTo(element, 
+                {
+                    opacity: 0,
+                    y: distance,
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    ease: 'power1.out',
+                    duration: parseFloat(duration),
+                    delay: parseFloat(delay),
+                    stagger: parseFloat(stagger),
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 90%',
+                        toggleActions: 'play none none pause'
+                    }
             });
         });
 
@@ -83,14 +93,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // Animate the split elements
-            gsap.from(split[splitType], {
-                opacity: 0,
-                y: '100%',
-                ease: 'power1.out',
-                duration: parseFloat(duration),
-                delay: parseFloat(delay),
-                stagger: parseFloat(stagger),
-                scrollTrigger: {
+            gsap.fromTo(split[splitType], 
+                {
+                    opacity: 0,
+                    y: '100%',
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    ease: 'power1.out',
+                    duration: parseFloat(duration),
+                    delay: parseFloat(delay),
+                    stagger: parseFloat(stagger),
+                    scrollTrigger: {
                     trigger: element,
                     start: 'top 90%',
                     toggleActions: 'play none none pause'
