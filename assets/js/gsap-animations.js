@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize animations
     function initAnimations() {
         // Fade-in animations
-        document.querySelectorAll('[data-animation="fade"]').forEach(element => {
+        document.querySelectorAll('[fade-in]').forEach(element => {
             const duration = element.dataset.duration || defaults.fade.duration;
             const delay = element.dataset.delay || defaults.fade.delay;
             const stagger = element.dataset.stagger || defaults.fade.stagger;
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Slide-up + fade animations
-        document.querySelectorAll('[data-animation="slide-up"]').forEach(element => {
+        document.querySelectorAll('[slide-up]').forEach(element => {
             const duration = element.dataset.duration || defaults.slideUp.duration;
             const delay = element.dataset.delay || defaults.slideUp.delay;
             const stagger = element.dataset.stagger || defaults.slideUp.stagger;
@@ -66,8 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // SplitText animations
-        document.querySelectorAll('[data-animation="split-text"]').forEach(element => {
-            const splitType = element.dataset.split || 'words';
+        document.querySelectorAll('[split-text]').forEach(element => {
+            // Determine split type based on attributes
+            let splitType = 'words'; // default
+            if (element.hasAttribute('split-char')) splitType = 'chars';
+            else if (element.hasAttribute('split-line')) splitType = 'lines';
+            else if (element.hasAttribute('split-word')) splitType = 'words';
+
             const duration = element.dataset.duration || defaults.splitText.duration;
             const delay = element.dataset.delay || defaults.splitText.delay;
             const stagger = element.dataset.stagger || defaults.splitText.stagger;
