@@ -116,20 +116,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 onComplete: () => {
                     setTimeout(() => {
                         resolve();
-                    }, 800); // Wait 0.8s before loading the next page
+                    }, 500); // Wait 0.5s before loading the next page
                 }
             });
             
             tl.to(loaderRect, {
                 opacity: 1,
-                right: '-50%',
-                duration: .8,
+                right: '-50vw',
+                duration: .5,
                 ease: "power2.inOut",
             })
-            .to(loaderRect, {
-                duration: .8,
-                ease: "power2.inOut",
-            }, '<');
         });
     }
 
@@ -138,17 +134,13 @@ document.addEventListener('DOMContentLoaded', () => {
         
         tl.to(loaderRect, {
             opacity: 1,
-            right: '-200%',
-            duration: .8,
+            right: '100vw',
+            duration: .5,
             ease: "power2.inOut",
         })
         .to(loaderRect, {
-            duration: .8,
-            ease: "power2.inOut",
-        }, '<')
-        .to(loaderRect, {
             opacity: 0,
-            right: '0%',
+            right: '-200vw',
             duration: 0,
         });
     }
