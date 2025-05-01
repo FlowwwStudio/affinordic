@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrollTrigger: {
                     trigger: element,
                     start: 'top 75%',
-                    toggleActions: 'play none none reverse'
+                    toggleActions: 'play none none pause'
                 }
             });
         });
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrollTrigger: {
                     trigger: element,
                     start: 'top 75%',
-                    toggleActions: 'play none none reverse'
+                    toggleActions: 'play none none pause'
                 }
             });
         });
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     trigger: element,
                     start: 'top 85%',
                     markers: true,
-                    toggleActions: 'play none none reverse'
+                    toggleActions: 'play none none pause'
                 }
             });
         });
