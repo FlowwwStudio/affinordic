@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 stagger: parseFloat(stagger),
                 scrollTrigger: {
                     trigger: element,
-                    start: 'top 75%',
+                    start: 'top 90%',
                     toggleActions: 'play none none pause'
                 }
             });
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 stagger: parseFloat(stagger),
                 scrollTrigger: {
                     trigger: element,
-                    start: 'top 75%',
+                    start: 'top 90%',
                     toggleActions: 'play none none pause'
                 }
             });
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 stagger: parseFloat(stagger),
                 scrollTrigger: {
                     trigger: element,
-                    start: 'top 85%',
+                    start: 'top 90%',
                     toggleActions: 'play none none pause'
                 }
             });
