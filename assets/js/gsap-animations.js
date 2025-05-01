@@ -107,9 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Image scroll animation
-    const imageScroll = document.querySelectorAll('img');
+    const imageScroll = document.querySelectorAll('[img-scale]');
     imageScroll.forEach(image => {
-        gsap.to(image, {
+        gsap.from(image, {
             scale: 1.1,
             scrollTrigger: {
                 trigger: image,
