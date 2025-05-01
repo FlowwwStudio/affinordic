@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageWrapper = imageScroll.parentElement;
     imageScroll.forEach(image => {
         gsap.to(image, {
-            scale: 1.05,
+            scale: 1.2,
             scrollTrigger: {
                 trigger: imageWrapper,
                 start: 'top bottom',
