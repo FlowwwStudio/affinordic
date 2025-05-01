@@ -106,6 +106,82 @@ document.addEventListener('DOMContentLoaded', () => {
         menuButton.addEventListener('click', toggleMenu);
     }
 
-    // Add scroll trigger
-    
+    // Loading the animation
+    const loaderRect = document.querySelector('.loader_rect');
+
+    gsap.set(loaderRect, {
+        right: '-75%',
+        opacity: 1,
+    });
+
+    // Page transition animations
+    function pageLeave() {
+        return new Promise(resolve => {
+            const tl = gsap.timeline({
+                onComplete: () => {
+                    setTimeout(() => {
+                        resolve();
+                    }, 800); // Wait 0.8s before loading the next page
+                }
+            });
+            
+            tl.to(loaderRect, {
+                opacity: 1,
+                right: '-75%',
+                duration: .8,
+                ease: "power2.inOut",
+            })
+            .to(loaderRect, {
+                borderTopLeftRadius: 0,
+                borderBottomLeftRadius: 0,
+                duration: .8,
+                ease: "power2.inOut",
+            }, '<');
+        });
+    }
+
+    function pageEnter() {
+        const tl = gsap.timeline();
+        
+        tl.to(loaderRect, {
+            opacity: 1,
+            right: '-200%',
+            duration: .8,
+            ease: "power2.inOut",
+        })
+        .to(loaderRect, {
+            borderTopRightRadius: "100vw",
+            borderBottomRightRadius: "100vw",
+            duration: .8,
+            ease: "power2.inOut",
+        }, '<')
+        .to(loaderRect, {
+            opacity: 0,
+            right: '0%',
+            duration: 0,
+            borderTopRightRadius: 0,
+            borderBottomRightRadius: 0, 
+            borderTopLeftRadius: '100vw',
+            borderBottomLeftRadius: '100vw',
+        }, '<');
+    }
+
+    // Handle page transitions
+    document.addEventListener('click', async (e) => {
+        const link = e.target.closest('a');
+        if (link && link.href && link.href.startsWith(window.location.origin) && !link.hasAttribute('no-transition')) {
+            e.preventDefault();
+            
+            // Run leave animation
+            await pageLeave();
+            
+            // Navigate to the new page
+            window.location.href = link.href;
+        }
+    });
+
+    // Run enter animation when page loads
+    window.addEventListener('DOMContentLoaded', () => {
+        pageEnter();
+    }); 
 });
