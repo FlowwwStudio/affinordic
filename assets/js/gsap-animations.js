@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.from(element, {
                 opacity: 0,
                 y: distance,
+                ease: 'power1.out',
                 duration: parseFloat(duration),
                 delay: parseFloat(delay),
                 stagger: parseFloat(stagger),
@@ -85,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.from(split[splitType], {
                 opacity: 0,
                 y: '100%',
-                ease: 'power3.out',
+                ease: 'power1.out',
                 duration: parseFloat(duration),
                 delay: parseFloat(delay),
                 stagger: parseFloat(stagger),
