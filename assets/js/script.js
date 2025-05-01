@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loaderRect = document.querySelector('.loader_rect');
 
     gsap.set(loaderRect, {
-        right: '-75%',
+        right: '-50%',
         opacity: 1,
     });
 
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             tl.to(loaderRect, {
                 opacity: 1,
-                right: '-75%',
+                right: '-50%',
                 duration: .8,
                 ease: "power2.inOut",
             })
