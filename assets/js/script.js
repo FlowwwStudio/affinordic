@@ -1,6 +1,3 @@
-// Import GSAP animations module
-import './gsap-animations.js';
-
 // Store the original state of navbar links
 let isMenuOpen = false;
 let isAnimating = false;

@@ -1,39 +1,35 @@
-// GSAP Animation Module
-class GSAPAnimations {
-    constructor() {
-        this.init();
-    }
+// GSAP Animation System
+document.addEventListener('DOMContentLoaded', () => {
+    // Register GSAP plugins
+    gsap.registerPlugin(ScrollTrigger, SplitText);
 
-    init() {
-        // Register GSAP plugins
-        gsap.registerPlugin(ScrollTrigger, SplitText);
-
-        // Initialize animations
-        this.initFadeIn();
-        this.initSlideUp();
-        this.initSplitText();
-    }
-
-    // Helper method to get data attributes with defaults
-    getDataAttributes(element, defaults) {
-        const attrs = {};
-        for (const [key, defaultValue] of Object.entries(defaults)) {
-            const value = element.dataset[key];
-            attrs[key] = value !== undefined ? value : defaultValue;
+    // Default animation settings
+    const defaults = {
+        fade: {
+            duration: .3,
+            delay: 0,
+            stagger: 0.1
+        },
+        slideUp: {
+            duration: .3,
+            delay: 0,
+            stagger: 0.1,
+            distance: '80%'
+        },
+        splitText: {
+            duration: 0.5,
+            delay: 0,
+            stagger: 0.15
         }
-        return attrs;
-    }
+    };
 
-    // Fade-in animation
-    initFadeIn() {
-        const elements = document.querySelectorAll('[data-animation="fade"]');
-        
-        elements.forEach(element => {
-            const { stagger = 0.1, duration = .3, delay = 0 } = this.getDataAttributes(element, {
-                stagger: 0.1,
-                duration: .3,
-                delay: 0
-            });
+    // Initialize animations
+    function initAnimations() {
+        // Fade-in animations
+        document.querySelectorAll('[data-animation="fade"]').forEach(element => {
+            const duration = element.dataset.duration || defaults.fade.duration;
+            const delay = element.dataset.delay || defaults.fade.delay;
+            const stagger = element.dataset.stagger || defaults.fade.stagger;
 
             gsap.from(element, {
                 opacity: 0,
@@ -42,75 +38,66 @@ class GSAPAnimations {
                 stagger: parseFloat(stagger),
                 scrollTrigger: {
                     trigger: element,
-                    start: "top 75%",
-                    toggleActions: "play none none reverse"
+                    start: 'top 75%',
+                    toggleActions: 'play none none reverse'
                 }
             });
         });
-    }
 
-    // Slide-up + fade animation
-    initSlideUp() {
-        const elements = document.querySelectorAll('[data-animation="slide-up"]');
-        
-        elements.forEach(element => {
-            const { stagger = 0.1, duration = .3, delay = 0, distance = "80%" } = this.getDataAttributes(element, {
-                stagger: 0.1,
-                duration: .3,
-                delay: 0,
-                distance: "80%"
-            });
+        // Slide-up + fade animations
+        document.querySelectorAll('[data-animation="slide-up"]').forEach(element => {
+            const duration = element.dataset.duration || defaults.slideUp.duration;
+            const delay = element.dataset.delay || defaults.slideUp.delay;
+            const stagger = element.dataset.stagger || defaults.slideUp.stagger;
+            const distance = element.dataset.distance || defaults.slideUp.distance;
 
             gsap.from(element, {
+                opacity: 0,
                 y: distance,
-                opacity: 0,
                 duration: parseFloat(duration),
                 delay: parseFloat(delay),
                 stagger: parseFloat(stagger),
                 scrollTrigger: {
                     trigger: element,
-                    start: "top 75%",
-                    toggleActions: "play none none reverse"
+                    start: 'top 75%',
+                    toggleActions: 'play none none reverse'
                 }
             });
         });
-    }
 
-    // SplitText animation
-    initSplitText() {
-        const elements = document.querySelectorAll('[data-animation="split-text"]');
-        
-        elements.forEach(element => {
-            const { split = "words", stagger = 0.15, duration = .5, delay = 0 } = this.getDataAttributes(element, {
-                split: "words",
-                stagger: 0.15,
-                duration: .5,
-                delay: 0
-            });
+        // SplitText animations
+        document.querySelectorAll('[data-animation="split-text"]').forEach(element => {
+            const splitType = element.dataset.split || 'words';
+            const duration = element.dataset.duration || defaults.splitText.duration;
+            const delay = element.dataset.delay || defaults.splitText.delay;
+            const stagger = element.dataset.stagger || defaults.splitText.stagger;
 
             // Create SplitText instance
-            const splitText = new SplitText(element, {
-                type: split
+            const split = new SplitText(element, {
+                type: splitType
             });
 
             // Animate the split elements
-            gsap.from(splitText[split], {
-                y: "100%",
+            gsap.from(split[splitType], {
                 opacity: 0,
+                y: '100%',
                 duration: parseFloat(duration),
                 delay: parseFloat(delay),
                 stagger: parseFloat(stagger),
                 scrollTrigger: {
                     trigger: element,
-                    start: "top 75%",
-                    toggleActions: "play none none reverse"
+                    start: 'top 75%',
+                    toggleActions: 'play none none reverse'
                 }
             });
         });
     }
-}
 
-// Initialize the animations when the DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new GSAPAnimations();
+    // Initialize animations
+    initAnimations();
+
+    // Refresh ScrollTrigger on page resize
+    window.addEventListener('resize', () => {
+        ScrollTrigger.refresh();
+    });
 }); 
