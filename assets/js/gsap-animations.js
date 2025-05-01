@@ -31,13 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const delay = element.dataset.delay || defaults.fade.delay;
             const stagger = element.dataset.stagger || defaults.fade.stagger;
 
-            gsap.fromTo(element, 
-                {
+            gsap.from(element, 
+                {   
                     opacity: 0,
-                },
-                {
-                    opacity: 1,
-                    y: 0,
                     duration: parseFloat(duration),
                     delay: parseFloat(delay),
                     stagger: parseFloat(stagger),
@@ -56,14 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const stagger = element.dataset.stagger || defaults.slideUp.stagger;
             const distance = element.dataset.distance || defaults.slideUp.distance;
 
-            gsap.fromTo(element, 
+            gsap.from(element, 
                 {
                     opacity: 0,
                     y: distance,
-                },
-                {
-                    opacity: 1,
-                    y: 0,
                     ease: 'power1.out',
                     duration: parseFloat(duration),
                     delay: parseFloat(delay),
@@ -93,14 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // Animate the split elements
-            gsap.fromTo(split[splitType], 
+            gsap.from(split[splitType], 
                 {
                     opacity: 0,
                     yPercent: 100,
-                },
-                {
-                    opacity: 1,
-                    yPercent: 0,
                     ease: 'power1.out',
                     duration: parseFloat(duration),
                     delay: parseFloat(delay),
