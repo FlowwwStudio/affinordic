@@ -105,4 +105,20 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         ScrollTrigger.refresh();
     });
+    
+    // Image scroll animation
+    const imageScroll = document.querySelectorAll('img');
+    const imageWrapper = imageScroll.parentElement;
+    imageScroll.forEach(image => {
+        gsap.to(image, {
+            scale: 1.05,
+            scrollTrigger: {
+                trigger: imageWrapper,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true,
+                markers: true
+            }
+        });
+    });
 }); 
