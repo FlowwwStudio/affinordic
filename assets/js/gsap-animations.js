@@ -91,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrollTrigger: {
                     trigger: element,
                     start: 'top 85%',
-                    markers: true,
                     toggleActions: 'play none none pause'
                 }
             });
