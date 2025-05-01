@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             opacity: 0,
             right: '0%',
             duration: 0,
-        }, '<');
+        });
     }
 
     // Handle page transitions
