@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: .3,
             delay: 0,
             stagger: 0.1,
-            distance: '80%'
+            distance: '50px'
         },
         splitText: {
             duration: 0.5,
