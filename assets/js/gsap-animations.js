@@ -109,11 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Image scroll animation
     const imageScroll = document.querySelectorAll('img');
     imageScroll.forEach(image => {
-        const imageWrapper = image.parentElement;
         gsap.to(image, {
-            scale: 1.2,
+            scale: 1.1,
             scrollTrigger: {
-                trigger: imageWrapper,
+                trigger: image,
                 start: 'top bottom',
                 end: 'bottom top',
                 scrub: true,
