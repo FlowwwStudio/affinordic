@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 stagger: parseFloat(stagger),
                 scrollTrigger: {
                     trigger: element,
-                    start: 'top 75%',
+                    start: 'top 85%',
                     toggleActions: 'play none none reverse'
                 }
             });
