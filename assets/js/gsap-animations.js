@@ -68,9 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // SplitText animations
         document.querySelectorAll('[split-text]').forEach(element => {
             // Determine split type based on attributes
-            let splitType = 'words'; // default
+            let splitType = 'lines'; // default
             if (element.hasAttribute('split-char')) splitType = 'chars';
-            else if (element.hasAttribute('split-line')) splitType = 'lines';
             else if (element.hasAttribute('split-word')) splitType = 'words';
 
             const duration = element.dataset.duration || defaults.splitText.duration;
