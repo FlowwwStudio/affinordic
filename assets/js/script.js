@@ -132,8 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 ease: "power2.inOut",
             })
             .to(loaderRect, {
-                borderTopLeftRadius: 0,
-                borderBottomLeftRadius: 0,
                 duration: .8,
                 ease: "power2.inOut",
             }, '<');
@@ -150,8 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ease: "power2.inOut",
         })
         .to(loaderRect, {
-            borderTopRightRadius: "100vw",
-            borderBottomRightRadius: "100vw",
             duration: .8,
             ease: "power2.inOut",
         }, '<')
@@ -159,10 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
             opacity: 0,
             right: '0%',
             duration: 0,
-            borderTopRightRadius: 0,
-            borderBottomRightRadius: 0, 
-            borderTopLeftRadius: '100vw',
-            borderBottomLeftRadius: '100vw',
         }, '<');
     }
 
