@@ -96,11 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.fromTo(split[splitType], 
                 {
                     opacity: 0,
-                    y: '100%',
+                    yPercent: 100,
                 },
                 {
                     opacity: 1,
-                    y: 0,
+                    yPercent: 0,
                     ease: 'power1.out',
                     duration: parseFloat(duration),
                     delay: parseFloat(delay),
