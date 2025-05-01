@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Default animation settings
     const defaults = {
         fade: {
-            duration: .3,
+            duration: .5,
             delay: 0,
             stagger: 0.1
         },
