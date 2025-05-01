@@ -109,11 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Loading the animation
     const loaderRect = document.querySelector('.loader_rect');
 
-    gsap.set(loaderRect, {
-        right: '-50%',
-        opacity: 1,
-    });
-
     // Page transition animations
     function pageLeave() {
         return new Promise(resolve => {
