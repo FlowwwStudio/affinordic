@@ -4,7 +4,6 @@ let isAnimating = false;
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    gsap.registerPlugin(ScrollTrigger);
     // Find the menu button
     const menuButton = document.querySelector('[data-menu="button"]');
     const containerTop = document.querySelector('.navbar_links-container.is-top');
@@ -100,4 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    menuButton.addEventListener('click', toggleMenu);
 });
