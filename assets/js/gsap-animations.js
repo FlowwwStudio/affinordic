@@ -123,6 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
             split.revert();
         });
         splitTextInstances.clear();
+        
+        // Kill all ScrollTriggers
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        // Kill all tweens on animated elements
+        gsap.killTweensOf(document.querySelectorAll('[fade-in], [slide-up], [split-text], [img-scale]'));
+
         // Re-initialize animations (including SplitText)
         initAnimations();
         ScrollTrigger.refresh();
