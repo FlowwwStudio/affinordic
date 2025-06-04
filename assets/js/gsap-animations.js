@@ -116,22 +116,55 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize animations
     initAnimations();
 
-    // Refresh ScrollTrigger and re-split SplitText on page resize
-    window.addEventListener('resize', () => {
-        // Revert all SplitText instances
-        splitTextInstances.forEach((split, element) => {
-            split.revert();
-        });
-        splitTextInstances.clear();
-        
-        // Kill all ScrollTriggers
-        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        // Kill all tweens on animated elements
-        gsap.killTweensOf(document.querySelectorAll('[fade-in], [slide-up], [split-text], [img-scale]'));
+    // Function to refresh only split-text animations on resize
+    function refreshSplitTextAnimations() {
+        document.querySelectorAll('[split-text]').forEach(element => {
+            // Determine split type
+            let splitType = 'lines';
+            if (element.hasAttribute('split-char')) splitType = 'chars';
+            else if (element.hasAttribute('split-word')) splitType = 'words';
 
-        // Re-initialize animations (including SplitText)
-        initAnimations();
+            // Revert previous split if exists
+            if (splitTextInstances.has(element)) {
+                splitTextInstances.get(element).revert();
+            }
+
+            // Kill ScrollTriggers for this element
+            ScrollTrigger.getAll().forEach(trigger => {
+                if (trigger.trigger === element) trigger.kill();
+            });
+            // Kill tweens for this element
+            gsap.killTweensOf(element);
+
+            // Re-split
+            const split = new SplitText(element, { type: splitType });
+            splitTextInstances.set(element, split);
+
+            // Re-animate
+            const duration = element.dataset.duration || defaults.splitText.duration;
+            const delay = element.dataset.delay || defaults.splitText.delay;
+            const stagger = element.dataset.stagger || defaults.splitText.stagger;
+
+            gsap.from(split[splitType], {
+                opacity: 0,
+                yPercent: 100,
+                ease: 'power1.out',
+                duration: parseFloat(duration),
+                delay: parseFloat(delay),
+                stagger: parseFloat(stagger),
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 90%',
+                    toggleActions: 'play none none pause'
+                }
+            });
+        });
         ScrollTrigger.refresh();
+    }
+
+    // Refresh only split-text animations on page resize
+    window.addEventListener('resize', () => {
+        refreshSplitTextAnimations();
     });
     
     // Image scroll animation
