@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Store SplitText instances for cleanup on resize
+    const splitTextElements = [];
+    const splitTextInstances = new Map();
+
     // Initialize animations
     function initAnimations() {
         // Fade-in animations
@@ -79,10 +83,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const delay = element.dataset.delay || defaults.splitText.delay;
             const stagger = element.dataset.stagger || defaults.splitText.stagger;
 
+            // If already split, revert before splitting again
+            if (splitTextInstances.has(element)) {
+                splitTextInstances.get(element).revert();
+            }
+
             // Create SplitText instance
             const split = new SplitText(element, {
                 type: splitType
             });
+            splitTextInstances.set(element, split);
+            splitTextElements.push(element);
 
             // Animate the split elements
             gsap.from(split[splitType], 
@@ -105,8 +116,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize animations
     initAnimations();
 
-    // Refresh ScrollTrigger on page resize
+    // Refresh ScrollTrigger and re-split SplitText on page resize
     window.addEventListener('resize', () => {
+        // Revert all SplitText instances
+        splitTextInstances.forEach((split, element) => {
+            split.revert();
+        });
+        splitTextInstances.clear();
+        // Re-initialize animations (including SplitText)
+        initAnimations();
         ScrollTrigger.refresh();
     });
     
