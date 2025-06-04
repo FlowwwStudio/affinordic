@@ -34,8 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fade-in animations
         document.querySelectorAll('[fade-in]').forEach(element => {
             const duration = element.dataset.duration || defaults.fade.duration;
-            const delay = element.dataset.delay || defaults.fade.delay;
+            let delay = element.dataset.delay || defaults.fade.delay;
             const stagger = element.dataset.stagger || defaults.fade.stagger;
+            if (window.innerWidth < 479) {
+                delay = defaults.fade.delay;
+            }
 
             gsap.from(element, 
                 {   
@@ -54,9 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Slide-up + fade animations
         document.querySelectorAll('[slide-up]').forEach(element => {
             const duration = element.dataset.duration || defaults.slideUp.duration;
-            const delay = element.dataset.delay || defaults.slideUp.delay;
+            let delay = element.dataset.delay || defaults.slideUp.delay;
             const stagger = element.dataset.stagger || defaults.slideUp.stagger;
             const distance = element.dataset.distance || defaults.slideUp.distance;
+            if (window.innerWidth < 479) {
+                delay = defaults.slideUp.delay;
+            }
 
             gsap.from(element, 
                 {
@@ -82,8 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (element.hasAttribute('split-word')) splitType = 'words';
 
             const duration = element.dataset.duration || defaults.splitText.duration;
-            const delay = element.dataset.delay || defaults.splitText.delay;
+            let delay = element.dataset.delay || defaults.splitText.delay;
             const stagger = element.dataset.stagger || defaults.splitText.stagger;
+            if (window.innerWidth < 479) {
+                delay = defaults.splitText.delay;
+            }
 
             // If already split, revert before splitting again
             if (splitTextInstances.has(element)) {
