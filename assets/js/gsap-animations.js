@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const splitTextElements = [];
     const splitTextInstances = new Map();
 
+    let lastWindowWidth = window.innerWidth;
+
     // Initialize animations
     function initAnimations() {
         // Fade-in animations
@@ -162,9 +164,12 @@ document.addEventListener('DOMContentLoaded', () => {
         ScrollTrigger.refresh();
     }
 
-    // Refresh only split-text animations on page resize
+    // Refresh only split-text animations on page resize (only if width changes)
     window.addEventListener('resize', () => {
-        refreshSplitTextAnimations();
+        if (window.innerWidth !== lastWindowWidth) {
+            lastWindowWidth = window.innerWidth;
+            refreshSplitTextAnimations();
+        }
     });
     
     // Image scroll animation
