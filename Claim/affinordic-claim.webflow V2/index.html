@@ -1,0 +1,1296 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Wed Aug 06 2025 18:58:45 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="66221bcdb6a56b23cacb7d88" data-wf-site="66221bccb6a56b23cacb7d06" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Affinordic Claim</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/affinordic-claim.webflow.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon"><!--  Please keep this css code to improve the font quality -->
+  <style>
+  * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -o-font-smoothing: antialiased;
+}
+</style>
+  <link rel="stylesheet" href="https://fengyuanchen.github.io/datepicker/css/datepicker.css">
+  <style>
+	[data-hidden="target"] {
+  	opacity: 0;
+    transition: opacity 300ms ease;
+  }
+  [data-hidden="target"].is-active {
+  	opacity: 1; 
+  }
+</style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="global-styles w-embed">
+      <style>
+  html { font-size: 1.125rem; }
+  @media screen and (max-width:1920px) { html { font-size: calc(0.625rem + 0.41666666666666674vw); } }
+  @media screen and (max-width:1440px) { html { font-size: calc(0.8126951092611863rem + 0.20811654526534862vw); } }
+  @media screen and (max-width:479px) { html { font-size: calc(0.7494769874476988rem + 0.8368200836820083vw); } }
+/* Set color style to inherit */
+.inherit-color * {
+    color: inherit;
+}
+/* Focus state style for keyboard navigation for the focusable elements */
+*[tabindex]:focus-visible,
+  input[type="file"]:focus-visible {
+   outline: 0.125rem solid #4d65ff;
+   outline-offset: 0.125rem;
+}
+/* Get rid of top margin on first element in any rich text element */
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+/* Get rid of bottom margin on last element in any rich text element */
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+	margin-bottom: 0 !important;
+}
+/* Prevent all click and hover interaction with an element */
+.pointer-events-off {
+	pointer-events: none;
+}
+/* Enables all click and hover interaction with an element */
+.pointer-events-on {
+  pointer-events: auto;
+}
+/* Create a class of .div-square which maintains a 1:1 dimension of a div */
+.div-square::after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+/* Make sure containers never lose their center alignment */
+.container-medium,.container-small, .container-large {
+	margin-right: auto !important;
+  margin-left: auto !important;
+}
+/* 
+Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+*/
+/*
+a,
+.w-input,
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+*/
+/* Apply "..." after 3 lines of text */
+.text-style-3lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+/* Apply "..." after 2 lines of text */
+.text-style-2lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+/* Adds inline flex display */
+.display-inlineflex {
+  display: inline-flex;
+}
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+@media screen and (max-width: 991px) {
+    .hide, .hide-tablet {
+        display: none !important;
+    }
+}
+  @media screen and (max-width: 767px) {
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+}
+  @media screen and (max-width: 479px) {
+    .hide-mobile{
+      display: none !important;
+    }
+}
+.margin-0 {
+  margin: 0rem !important;
+}
+.padding-0 {
+  padding: 0rem !important;
+}
+.spacing-clean {
+padding: 0rem !important;
+margin: 0rem !important;
+}
+.margin-top {
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-top {
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-right {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-right {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-bottom {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-bottom {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-left {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.padding-left {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.margin-horizontal {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.padding-horizontal {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.margin-vertical {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-vertical {
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+/* Apply "..." at 100% width */
+.truncate-width { 
+		width: 100%; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+/* Removes native scrollbar */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none; 
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.claim_form_input {
+  background-repeat: no-repeat;
+  background-position: 1.25rem 50%;
+  background-size: 1.25rem;
+}
+ .claim_form_textarea {
+  background-repeat: no-repeat;
+  background-position: 1.25rem 1rem;
+  background-size: 1.25rem;
+}
+input[claim-input="write"]{
+	background-image: url("https://cdn.prod.website-files.com/66221bccb6a56b23cacb7d06/6622906fd335003189d57614_a3bca5368f70e3704879b930ca59824a_write.svg");
+}
+input[claim-input="user"] {
+	background-image: url('https://cdn.prod.website-files.com/66221bccb6a56b23cacb7d06/66229d855d2459608a396205_1c83b986cf6229efa90320f6df84de2b_user.svg')
+}
+input[claim-input="phone"] {
+	background-image: url('https://cdn.prod.website-files.com/66221bccb6a56b23cacb7d06/66229d861a792a950fadfe87_f063e74e31a8f5a2bf7519bcaca03527_phone.svg')
+}
+input[claim-input="email"] {
+	background-image: url('https://cdn.prod.website-files.com/66221bccb6a56b23cacb7d06/66229d85e46bbdb9605f395f_7e8a1b58c114df54efea052905c953ce_email.svg')
+}
+textarea[claim-textarea="write"]{
+	background-image: url("https://cdn.prod.website-files.com/66221bccb6a56b23cacb7d06/6622906fd335003189d57614_a3bca5368f70e3704879b930ca59824a_write.svg");
+}
+input[claim-input="salary"]{
+	background-image: url("https://cdn.prod.website-files.com/66221bccb6a56b23cacb7d06/6622d749a96753d14d867314_813f3be5f4422e45a3a1ce5633a67ed1_Salary.svg");
+}
+input[claim-input="date"]{
+	background-image: url("https://cdn.prod.website-files.com/66221bccb6a56b23cacb7d06/6622d749b20cd2328f1b7a0b_193fe9b39985ffa91a12df1aa14d66aa_Date.svg");
+}
+input[claim-input="brand"]{
+	background-image: url("https://cdn.prod.website-files.com/66221bccb6a56b23cacb7d06/6685b7adfce6cc0e6f190eaa_200ddb83b4d3be99aa3be4da9c8acc44_Brand-icon.svg");
+}
+input[claim-input="company"]{
+	background-image: url("https://cdn.prod.website-files.com/66221bccb6a56b23cacb7d06/6685b7add7f4bd419c7cb368_de348b4d11846ef25a51895d22df28d4_Company-icon.svg");
+}
+input[claim-input="imei"]{
+	background-image: url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6685b7ad96a05ae420e410e5_IEMI-nummer-icon.svg");
+}
+[claim-input="attach-file"]{
+	background-image: url("https://cdn.prod.website-files.com/66221bccb6a56b23cacb7d06/6622c9d5e0b68a1e3aafd0a9_ac414928558209ddfbb0e5dd95f2c69b_attach-file.svg");
+}
+/* Base styles for input and dropdown */
+.claim_form_dropdown {
+  background-repeat: no-repeat;
+  padding-left: 2.5rem; /* Add space for the left icon */
+}
+/* Specific styles for select element */
+select.claim_form_dropdown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("https://cdn.prod.website-files.com/66221bccb6a56b23cacb7d06/6685b7adac6504e29765dcd4_2dbadb67524a56555bf15474a1571132_Product-icon.svg"), url("https://uploads-ssl.webflow.com/66221bccb6a56b23cacb7d06/6685b7adf1bdb84eb83dbd77_Dropdown-icon.svg");
+  background-position: 1.25rem center, right 1.25rem center;
+  background-size: 1.25rem, 1rem; /* Set different sizes for the icons */
+  padding-right: 2.5rem; /* Add space for the right icon */
+}
+/* Apply existing styles to input */
+input[claim-input="product-group"], [data-name="product-group"] {
+  background-image: url("https://cdn.prod.website-files.com/66221bccb6a56b23cacb7d06/6685b7adac6504e29765dcd4_2dbadb67524a56555bf15474a1571132_Product-icon.svg");
+  background-position: 1.25rem center;
+  text-indent: 0.75rem;
+}
+</style>
+    </div>
+    <main class="main-wrapper">
+      <section class="section_claim">
+        <div class="container-large">
+          <div class="claim_container">
+            <div class="claim_form-container w-form">
+              <form id="wf-form-claim" name="wf-form-claim" data-name="claim" method="get" class="claim_form" data-wf-page-id="66221bcdb6a56b23cacb7d88" data-wf-element-id="9e86ce01-d591-d523-6358-5019cb853205">
+                <div fs-form-step="1" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>Anmeld skade</h2>
+                      <p>Vi har blot brug for nogle enkelte informationer fra dig, så vi hjælpe dig med at få fikset din mobil eller anden elektronik</p>
+                    </div>
+                  </div>
+                  <div class="max-width-small">
+                    <div class="claim_form_selection-container"><label data-state="" class="claim_form_radio1 w-radio">
+                        <div class="w-form-formradioinput w-form-formradioinput--inputType-custom claim_form_radio-btn w-radio-input"></div><input type="radio" name="type-of-item" id="Elektronik" data-name="type of item" style="opacity:0;position:absolute;z-index:-1" value="Elektronik"><span class="w-form-label" for="Elektronik">Elektronik</span>
+                      </label><label data-state="" class="claim_form_radio1 w-radio">
+                        <div class="w-form-formradioinput w-form-formradioinput--inputType-custom claim_form_radio-btn w-radio-input"></div><input type="radio" name="type-of-item" id="IT-kriminalitet" data-name="type of item" style="opacity:0;position:absolute;z-index:-1" value="IT kriminalitet"><span class="w-form-label" for="IT-kriminalitet">IT kriminalitet</span>
+                      </label><label data-state="" class="claim_form_radio1 w-radio">
+                        <div class="w-form-formradioinput w-form-formradioinput--inputType-custom claim_form_radio-btn w-radio-input"></div><input type="radio" name="type-of-item" id="Hvidevarer" data-name="type of item" style="opacity:0;position:absolute;z-index:-1" value="Hvidevarer"><span class="w-form-label" for="Hvidevarer">Hvidevarer</span>
+                      </label><label data-state="" class="claim_form_radio1 w-radio">
+                        <div class="w-form-formradioinput w-form-formradioinput--inputType-custom claim_form_radio-btn w-radio-input"></div><input type="radio" name="type-of-item" id="Varmepumper-og-solcelleanl-g" data-name="type of item" style="opacity:0;position:absolute;z-index:-1" value="Varmepumper og solcelleanlæg"><span class="w-form-label" for="Varmepumper-og-solcelleanl-g">Varmepumper og solcelleanlæg</span>
+                      </label><label data-state="" class="claim_form_radio1 w-radio">
+                        <div class="w-form-formradioinput w-form-formradioinput--inputType-custom claim_form_radio-btn w-radio-input"></div><input type="radio" name="type-of-item" id="Andre-produkttyper" data-name="type of item" style="opacity:0;position:absolute;z-index:-1" value="Andre produkttyper"><span class="w-form-label" for="Andre-produkttyper">Andre produkttyper</span>
+                      </label></div>
+                  </div>
+                  <div class="claim_form_bottom">
+                    <a href="#" class="button is-secondary w-button">Tilbage</a>
+                    <div class="claim_form_steps-container">
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot"></div>
+                      <div class="claim_form_step-dot"></div>
+                      <div class="claim_form_step-dot"></div>
+                      <div class="claim_form_step-dot"></div>
+                      <div class="claim_form_step-dot"></div>
+                    </div>
+                    <a href="#" class="button is-disabled w-button">Næste</a>
+                  </div>
+                </div>
+                <div fs-form-step="2" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>Anmeld skade</h2>
+                      <p>Produktets IMEI-nummer (Mobiltelefoner) eller serienummer (Alle andre produkttyper)</p>
+                    </div>
+                  </div>
+                  <div class="claim_form_selection-container is-2-column"><label data-hidden="trigger" data-state="" class="claim_form_radio2">
+                      <div class="margin-bottom margin-xsmall"><img src="images/IMEI-number.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="number" class="hide" value="IMEI-nummer">
+                      <div>
+                        <div class="text-weight-bold">IMEI-nummer</div>
+                      </div>
+                      <div class="claim_form_radio-bottom">
+                        <div>Se hvor du finder det her</div>
+                        <div class="claim_form_info-container">
+                          <div class="info-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="-1 -1 48 48" height="48" width="48">
+                              <g id="question-mark">
+                                <path id="Vector" stroke="currentColor" d="M23 37.375v-3.8333333333333335m0 -2.875v-2.875l5.635 -5.635A6.947916666666667 6.947916666666667 0 0 0 30.666666666666668 17.25a7.666666666666667 7.666666666666667 0 1 0 -14.7775 2.875M43.125 5.75S34.5 2.875 23 2.875 2.875 5.75 2.875 5.75v34.5S11.5 43.125 23 43.125 43.125 40.25 43.125 40.25V5.75Z" stroke-width="4"></path>
+                              </g>
+                            </svg></div>
+                          <div class="claim_form_info-tooltip">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                            <div class="claim_form_tip"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label><label data-hidden="trigger" data-state="" class="claim_form_radio2">
+                      <div class="margin-bottom margin-xsmall"><img src="images/Serial-number.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="number" class="hide" value="Serie-nummer">
+                      <div>
+                        <div class="text-weight-bold">Serie-nummeret</div>
+                      </div>
+                      <div class="claim_form_radio-bottom">
+                        <div>Se hvor du finder det her</div>
+                        <div class="claim_form_info-container">
+                          <div class="info-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="-1 -1 48 48" height="48" width="48">
+                              <g id="question-mark">
+                                <path id="Vector" stroke="currentColor" d="M23 37.375v-3.8333333333333335m0 -2.875v-2.875l5.635 -5.635A6.947916666666667 6.947916666666667 0 0 0 30.666666666666668 17.25a7.666666666666667 7.666666666666667 0 1 0 -14.7775 2.875M43.125 5.75S34.5 2.875 23 2.875 2.875 5.75 2.875 5.75v34.5S11.5 43.125 23 43.125 43.125 40.25 43.125 40.25V5.75Z" stroke-width="4"></path>
+                              </g>
+                            </svg></div>
+                          <div class="claim_form_info-tooltip">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                            <div class="claim_form_tip"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                    <div data-hidden="target" id="w-node-b5ed1b47-d50d-d94e-8a70-5d93961490fb-cacb7d88" class="claim_form_search-input_wrapper span-2-column is-active"><input class="claim_form_input w-node-_24114ae6-d9df-b74a-247f-cc4be6632b17-cacb7d88 w-input" maxlength="256" name="field" data-name="Field" placeholder="Skriv nummeret her" claim-input="write" type="text" id="field" required=""><button class="button is-search">Søg</button></div>
+                    <div class="claim_form_error-message span-2-column">
+                      <div class="claim_form_error-message_text">Systemet kunne ikke finde dit produkt - udfyld venligst de påkrævede oplysninger på næste side</div>
+                    </div>
+                    <div class="claim_form_message span-2-column">
+                      <div class="claim_form_message_text">Vi fandt dine data ud fra det indtastede, tryk på ’Næste’ og udfyld resten af din skadeanmeldelse</div>
+                    </div>
+                  </div>
+                  <div class="claim_form_bottom">
+                    <a href="#" class="button is-secondary w-button">Tilbage</a>
+                    <div class="claim_form_steps-container">
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot"></div>
+                      <div class="claim_form_step-dot"></div>
+                      <div class="claim_form_step-dot"></div>
+                      <div class="claim_form_step-dot"></div>
+                    </div>
+                    <a href="#" class="button is-disabled w-button">Næste</a>
+                  </div>
+                </div>
+                <div fs-form-step="3" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>Anmeld skade</h2>
+                      <p>Systemet kunne ikke finde dit produkt - udfyld venligst de påkrævede oplysninger nedenfor</p>
+                    </div>
+                  </div>
+                  <div class="max-width-small">
+                    <div class="claim_form_selection-container"><select id="product-group" name="product-group" data-name="product-group" claim-input="product" class="claim_form_dropdown w-node-_04dd6523-047b-007d-9fc4-b78eb8d74379-cacb7d88 w-select">
+                        <option value="">Produktgruppe</option>
+                        <option value="First">First choice</option>
+                        <option value="Second">Second choice</option>
+                        <option value="Third">Third choice</option>
+                      </select><input class="claim_form_input w-node-_7b0f293d-1578-b43c-fe0c-46c38075fa99-cacb7d88 w-input" maxlength="256" name="product-brand" data-name="product-brand" placeholder="Produktmærke" claim-input="brand" type="text" id="product-brand" required="">
+                      <div class="claim_form_search-input_wrapper"><input class="claim_form_input w-input" maxlength="256" name="IMEI-number" data-name="IMEI-number" placeholder="IMEI-nummer" claim-input="imei" type="text" id="IMEI-number" required=""><button class="button is-search">Søg</button></div>
+                    </div>
+                  </div>
+                  <div class="claim_form_bottom">
+                    <a href="#" class="button is-secondary w-button">Tilbage</a>
+                    <div class="claim_form_steps-container">
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot"></div>
+                      <div class="claim_form_step-dot"></div>
+                      <div class="claim_form_step-dot"></div>
+                    </div>
+                    <a href="#" class="button is-disabled w-button">Næste</a>
+                  </div>
+                </div>
+                <div fs-form-step="3" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>Anmeld skade</h2>
+                      <p>Udfyld oplysningerne nedenfor, så vi eller en af vores servicepartnere kan kontakte dig angående udbedring af skaden/fejlen på dit udstyr</p>
+                    </div>
+                  </div>
+                  <div class="max-width-small">
+                    <div class="claim_form_selection-container">
+                      <div id="w-node-ae04c489-e82b-45e3-8a38-09522fc37fb6-cacb7d88" class="claim_form_input-group"><label data-state="" class="claim_form_radio1 w-radio">
+                          <div class="w-form-formradioinput w-form-formradioinput--inputType-custom claim_form_radio-btn w-radio-input"></div><input type="radio" name="private-or-company" id="company-2" data-name="private or company" style="opacity:0;position:absolute;z-index:-1" value="company"><span class="w-form-label" for="company-2">Firma</span>
+                        </label><label data-state="" class="claim_form_radio1 w-radio">
+                          <div class="w-form-formradioinput w-form-formradioinput--inputType-custom claim_form_radio-btn w-radio-input"></div><input type="radio" name="private-or-company" id="private" data-name="private or company" style="opacity:0;position:absolute;z-index:-1" value="private"><span class="w-form-label" for="private">Privatperson</span>
+                        </label></div><input class="claim_form_input w-node-_8f2fd698-1aca-8d73-a1a4-2e7fcf1a9f77-cacb7d88 w-input" maxlength="256" name="company" data-name="company" placeholder="Firmanavn" claim-input="company" type="text" id="company" required=""><input class="claim_form_input w-node-c7a9f509-8430-7a5a-7740-21efff469d50-cacb7d88 w-input" maxlength="256" name="Name" data-name="Name" placeholder="Anmelders navn" claim-input="user" type="text" id="Name-4" required=""><input class="claim_form_input w-input" maxlength="256" name="field-2" data-name="Field 2" placeholder="Telefonnr." claim-input="phone" type="text" id="field-2" required=""><input class="claim_form_input w-input" maxlength="256" name="email-3" data-name="Email 3" placeholder="Email" claim-input="email" type="email" id="email-3" required=""><input class="claim_form_input w-input" maxlength="256" name="address-2" data-name="Address 2" placeholder="Evt. returadresse og afdeling / attentionperson" claim-input="write" type="text" id="address-2" required="">
+                    </div>
+                  </div>
+                  <div class="claim_form_bottom">
+                    <a href="#" class="button is-secondary w-button">Tilbage</a>
+                    <div class="claim_form_steps-container">
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot"></div>
+                      <div class="claim_form_step-dot"></div>
+                    </div>
+                    <a href="#" class="button is-disabled w-button">Næste</a>
+                  </div>
+                </div>
+                <div fs-form-step="4" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>Anmeld skade</h2>
+                      <p>Udfyld oplysningerne nedenfor, så vi eller en af vores servicepartnere kan kontakte dig angående udbedring af skaden/fejlen på dit udstyr</p>
+                    </div>
+                  </div>
+                  <div class="claim_form_selection-container is-4-cloumn"><label data-status="" class="claim_form_radio2">
+                      <div class="margin-bottom margin-xsmall"><img src="images/Accident.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="type of accident" class="hide" value="Uheld">
+                      <div>
+                        <div class="text-weight-bold">Uheld</div>
+                      </div>
+                      <div class="claim_form_radio-bottom">
+                        <div>Se hvad det kan være her</div>
+                        <div class="claim_form_info-container">
+                          <div class="info-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="-1 -1 48 48" height="48" width="48">
+                              <g id="question-mark">
+                                <path id="Vector" stroke="currentColor" d="M23 37.375v-3.8333333333333335m0 -2.875v-2.875l5.635 -5.635A6.947916666666667 6.947916666666667 0 0 0 30.666666666666668 17.25a7.666666666666667 7.666666666666667 0 1 0 -14.7775 2.875M43.125 5.75S34.5 2.875 23 2.875 2.875 5.75 2.875 5.75v34.5S11.5 43.125 23 43.125 43.125 40.25 43.125 40.25V5.75Z" stroke-width="4"></path>
+                              </g>
+                            </svg></div>
+                          <div class="claim_form_info-tooltip">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                            <div class="claim_form_tip"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label><label data-status="" class="claim_form_radio2">
+                      <div class="margin-bottom margin-xsmall"><img src="images/Malfunction.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="type of accident" class="hide" value="Funktionsfejl">
+                      <div>
+                        <div class="text-weight-bold">Funktionsfejl</div>
+                      </div>
+                      <div class="claim_form_radio-bottom">
+                        <div>Se hvad det kan være her</div>
+                        <div class="claim_form_info-container">
+                          <div class="info-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="-1 -1 48 48" height="48" width="48">
+                              <g id="question-mark">
+                                <path id="Vector" stroke="currentColor" d="M23 37.375v-3.8333333333333335m0 -2.875v-2.875l5.635 -5.635A6.947916666666667 6.947916666666667 0 0 0 30.666666666666668 17.25a7.666666666666667 7.666666666666667 0 1 0 -14.7775 2.875M43.125 5.75S34.5 2.875 23 2.875 2.875 5.75 2.875 5.75v34.5S11.5 43.125 23 43.125 43.125 40.25 43.125 40.25V5.75Z" stroke-width="4"></path>
+                              </g>
+                            </svg></div>
+                          <div class="claim_form_info-tooltip">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                            <div class="claim_form_tip"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label><label data-status="" class="claim_form_radio2">
+                      <div class="margin-bottom margin-xsmall"><img src="images/Liquid.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="type of accident" class="hide" value="Væske">
+                      <div>
+                        <div class="text-weight-bold">Væske</div>
+                      </div>
+                      <div class="claim_form_radio-bottom">
+                        <div>Se hvad det kan være her</div>
+                        <div class="claim_form_info-container">
+                          <div class="info-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="-1 -1 48 48" height="48" width="48">
+                              <g id="question-mark">
+                                <path id="Vector" stroke="currentColor" d="M23 37.375v-3.8333333333333335m0 -2.875v-2.875l5.635 -5.635A6.947916666666667 6.947916666666667 0 0 0 30.666666666666668 17.25a7.666666666666667 7.666666666666667 0 1 0 -14.7775 2.875M43.125 5.75S34.5 2.875 23 2.875 2.875 5.75 2.875 5.75v34.5S11.5 43.125 23 43.125 43.125 40.25 43.125 40.25V5.75Z" stroke-width="4"></path>
+                              </g>
+                            </svg></div>
+                          <div class="claim_form_info-tooltip">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                            <div class="claim_form_tip"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label><label data-status="" class="claim_form_radio2">
+                      <div class="margin-bottom margin-xsmall"><img src="images/Theft.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="type of accident" class="hide" value="Tyveri">
+                      <div>
+                        <div class="text-weight-bold">Tyveri</div>
+                      </div>
+                    </label><label data-status="" class="claim_form_radio2">
+                      <div class="margin-bottom margin-xsmall"><img src="images/termination-of-employment.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="type of accident" class="hide" value="Ansættelsesophør">
+                      <div>
+                        <div class="text-weight-bold">Ansættelsesophør</div>
+                      </div>
+                    </label><label data-status="" class="claim_form_radio2">
+                      <div class="margin-bottom margin-xsmall"><img src="images/Lost-item.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="type of accident" class="hide" value="Borkommet">
+                      <div>
+                        <div class="text-weight-bold">Bortkommet</div>
+                      </div>
+                      <div class="claim_form_radio-bottom">
+                        <div>Se hvad det kan være her</div>
+                        <div class="claim_form_info-container">
+                          <div class="info-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="-1 -1 48 48" height="48" width="48">
+                              <g id="question-mark">
+                                <path id="Vector" stroke="currentColor" d="M23 37.375v-3.8333333333333335m0 -2.875v-2.875l5.635 -5.635A6.947916666666667 6.947916666666667 0 0 0 30.666666666666668 17.25a7.666666666666667 7.666666666666667 0 1 0 -14.7775 2.875M43.125 5.75S34.5 2.875 23 2.875 2.875 5.75 2.875 5.75v34.5S11.5 43.125 23 43.125 43.125 40.25 43.125 40.25V5.75Z" stroke-width="4"></path>
+                              </g>
+                            </svg></div>
+                          <div class="claim_form_info-tooltip">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                            <div class="claim_form_tip"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label><label data-status="" class="claim_form_radio2">
+                      <div class="margin-bottom margin-xsmall"><img src="images/Other.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="type of accident" class="hide" value="andet">
+                      <div>
+                        <div class="text-weight-bold">Andet</div>
+                      </div>
+                      <div class="claim_form_radio-bottom">
+                        <div> </div>
+                        <div class="claim_form_info-container"></div>
+                      </div>
+                    </label></div>
+                  <div class="claim_form_bottom">
+                    <a href="#" class="button is-secondary w-button">Tilbage</a>
+                    <div class="claim_form_steps-container">
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot"></div>
+                    </div>
+                    <a href="#" class="button is-disabled w-button">Næste</a>
+                  </div>
+                </div>
+                <div fs-form-step="5" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>Anmeld skade</h2>
+                      <p>Udfyld oplysningerne nedenfor, med detaljeret information om hvad der er sket med udstyret, og hvad det fejler</p>
+                    </div>
+                  </div>
+                  <div class="max-width-small">
+                    <div class="claim_form_selection-container"><input class="claim_form_input w-node-c9a10286-c918-2587-5c40-c2858109c290-cacb7d88 w-input" autocomplete="off" maxlength="256" name="Skadesdato" data-name="Skadesdato" placeholder="Skadesdato" data-toggle="datepicker" claim-input="date" type="text" id="Skadesdato" required=""><textarea class="claim_form_textarea w-node-_00cec7e7-b062-0c46-e21a-90ed2361da62-cacb7d88 w-input" maxlength="5000" claim-textarea="write" name="field-3" data-name="Field 3" placeholder="Beskriv den hændelse der har medført skaden (hvis den kendes)" id="field-3"></textarea><textarea class="claim_form_textarea w-input" maxlength="5000" claim-textarea="write" name="field-3" data-name="Field 3" placeholder="Hvad er der sket med udstyret som følge af overstående hændelse?" id="field-3"></textarea>
+                      <div class="text-size-small">Ved funktionsfejl uden en kendt forudgående hændelse, skrives blot ”Ingen” i det øverste felt, og den opståede fejl der er konstateret på udstyret beskrives i det nederste felt”</div>
+                    </div>
+                  </div>
+                  <div class="claim_form_bottom">
+                    <a href="#" class="button is-secondary w-button">Tilbage</a>
+                    <div class="claim_form_steps-container">
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                    </div>
+                    <a href="#" class="button is-disabled w-button">Næste</a>
+                  </div>
+                </div>
+                <div fs-form-step="theft" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>Anmeld skade</h2>
+                      <p>Vi skal bruge politirapporten på den stjålende genstand</p>
+                    </div>
+                  </div>
+                  <div class="max-width-small">
+                    <div class="claim_form_selection-container"><label data-status="" class="claim_form_radio2">
+                        <div class="margin-bottom margin-xsmall"><img src="images/Theft.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide" value="Tyveri">
+                        <div>
+                          <div class="text-weight-bold">Tyveri</div>
+                        </div>
+                      </label>
+                      <div claim-input="attach-file" claim-action="file-placeholder" style="cursor: pointer;" class="claim_form_input">Vedhæft politirapport</div><input claim-input="attach-file" placeholder="Vedhæft politirapport" type="file" class="claim_form_input is-file"><input class="claim_form_input w-node-a2bff9d0-702f-df36-dcb8-11ec63882517-cacb7d88 w-input" maxlength="256" name="case-number" data-name="case number" placeholder="Evt. journalnummeret" claim-input="write" type="text" id="case-number" required="">
+                    </div>
+                  </div>
+                  <div class="claim_form_bottom">
+                    <a href="#" class="button is-secondary w-button">Tilbage</a>
+                    <div class="claim_form_steps-container">
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot"></div>
+                    </div>
+                    <a href="#" class="button is-disabled w-button">Næste</a>
+                  </div>
+                </div>
+                <div fs-form-step="termination of employment" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>Anmeld skade</h2>
+                      <p>Udfyld nedestående felter vedrørende ansættelsesophør</p>
+                    </div>
+                  </div>
+                  <div class="max-width-small">
+                    <div class="claim_form_selection-container"><input class="claim_form_input w-node-_8deb2302-def4-edff-2550-2b66b7507ec6-cacb7d88 w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="Fornavn" claim-input="user" type="text" id="name-2" required=""><input class="claim_form_input w-input" maxlength="256" name="field-2" data-name="Field 2" placeholder="Telefonnr. efter fratrædelse" claim-input="phone" type="text" id="field-2" required=""><input class="claim_form_input w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="Email efter fratrædelse" claim-input="email" type="email" id="email-2" required=""><input class="claim_form_input w-input" maxlength="256" name="salary" data-name="salary" placeholder="Lønnr." claim-input="salary" type="text" id="salary" required=""><input class="claim_form_input w-input" maxlength="256" name="date" data-name="date" placeholder="Dato for fratrædelse" claim-input="date" type="text" id="date" required=""><input class="claim_form_input w-input" maxlength="256" name="date" data-name="date" placeholder="Dato for sidste lønudbetaling" claim-input="date" type="text" id="date-2" required=""><input class="claim_form_input w-input" maxlength="256" name="date" data-name="date" placeholder="Dato for første løntræk" claim-input="date" type="text" id="date-3" required=""></div>
+                  </div>
+                  <div class="claim_form_bottom">
+                    <a href="#" class="button is-secondary w-button">Tilbage</a>
+                    <div class="claim_form_steps-container">
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot is-active"></div>
+                      <div class="claim_form_step-dot"></div>
+                    </div>
+                    <a href="#" class="button is-disabled w-button">Næste</a>
+                  </div>
+                </div>
+                <div fs-form-step="final" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link hide w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>Skaden er anmeldt</h2>
+                      <p>Vi skal bruge detaljerne på hvad der er sket med dit udstyr, så vi kan give det videre og fremskynde reperationen</p>
+                    </div>
+                  </div>
+                  <div class="claim_form_selection-container is-3-column">
+                    <div class="claim_form_final-column">
+                      <div class="margin-bottom margin-medium">
+                        <div class="round-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 48 48" fill="none" class="claim_form_final-icon">
+                            <path d="M1.95819 13.4583L23.7603 26.875H24.2394L46.0415 13.4583M46.0415 8.66663V40.2916H45.0832C39.3332 39.3333 29.7499 38.8541 23.9999 38.8541C18.2499 38.8541 8.66652 39.3333 2.91652 40.2916H1.95819V8.66663C7.70819 7.70829 18.2499 7.22913 23.9999 7.22913C29.7499 7.22913 40.2915 7.70829 46.0415 8.66663Z" stroke="currentColor" stroke-width="2"></path>
+                          </svg></div>
+                      </div>
+                      <p class="text-align-center">Du har nu modtaget en mail. Hvis ikke du kan finde den så tjek dit spam filter, hvis vores mail heller ikke er at finde der kan du kontakte os her</p>
+                    </div>
+                    <div class="claim_form_final-column">
+                      <div class="margin-bottom margin-medium">
+                        <div class="round-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 48 48" fill="none" class="claim_form_final-icon">
+                            <path d="M5.04041 9.81276C5.04041 28.1188 19.8812 42.9596 38.1872 42.9596L45.2904 35.8564L37.0047 27.5707L31.0841 33.4893L14.5107 16.9159L20.4293 10.9973L12.1436 2.70959L5.04041 9.81276Z" stroke="currentColor" stroke-width="2"></path>
+                          </svg></div>
+                      </div>
+                      <p class="text-align-center">Du vil blive kontaktet direkte fra vores servicepartner vedr. udbedring af skaden / fejlen på dit forsikrede produkt. Hvis vi mangler oplysninger for at kunne behandle/afslutte din anmeldelse, kontakter vi dig</p>
+                    </div>
+                    <div class="claim_form_final-column">
+                      <div class="margin-bottom margin-medium">
+                        <div class="round-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 48 48" fill="none" class="claim_form_final-icon">
+                            <g clip-path="url(#clip0_2512_62)">
+                              <path d="M30.541 17.4544C29.3201 13.7897 29.3201 10.5352 31.7619 8.09147L37.119 2.73822C34.7148 1.88055 32.1157 1.72657 29.627 2.29434C27.1383 2.8621 24.8632 4.12806 23.0688 5.9436C21.2744 7.75913 20.0351 10.0489 19.4965 12.5441C18.9579 15.0393 19.1423 17.6363 20.0281 20.0304L1.94818 33.5889C1.94818 36.893 3.26075 40.0619 5.59714 42.3983C6.75401 43.5551 8.1274 44.4728 9.63892 45.0989C11.1504 45.725 12.7705 46.0472 14.4065 46.0472L27.965 27.9692C30.3591 28.855 32.9561 29.0394 35.4513 28.5008C37.9465 27.9622 40.2363 26.7229 42.0518 24.9285C43.8673 23.1341 45.1333 20.859 45.7011 18.3703C46.2688 15.8816 46.1148 13.2826 45.2572 10.8783L39.9039 16.2316C37.4621 18.6753 34.2057 18.6753 30.541 17.4544Z" stroke="currentColor" stroke-width="2"></path>
+                            </g>
+                          </svg></div>
+                      </div>
+                      <p class="text-align-center">Vores servicepartner går i gang med udbedring af skaden / fejlen på dit forsikrede produkt</p>
+                    </div>
+                  </div>
+                  <div class="claim_form_bottom centered"></div>
+                </div>
+                <div fs-form-info="2" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>Anmeld skade</h2>
+                      <p>Produktets IMEI-nummer (Mobiltelefoner) eller serienummer (Alle andre produkttyper)</p>
+                    </div>
+                  </div>
+                  <div class="claim_form_selection-container is-2-column"><label data-status="" class="claim_form_radio2">
+                      <div class="margin-bottom margin-xsmall"><img src="images/Apple-icon.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide" value="">
+                      <div>
+                        <div class="text-weight-bold">Apple</div>
+                      </div>
+                      <div class="claim_form_radio-bottom">
+                        <div>Se hvor du finder det her</div>
+                        <div class="claim_form_info-container">
+                          <div class="claim_form_info-tooltip">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                            <div class="claim_form_tip"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label><label data-status="" class="claim_form_radio2">
+                      <div class="margin-bottom margin-xsmall"><img src="images/Andriod-logo.svg" loading="lazy" alt="" class="icon-height-medium"></div><input name="radio" type="radio" data-name="" class="hide" value="">
+                      <div>
+                        <div class="text-weight-bold">Android</div>
+                      </div>
+                      <div class="claim_form_radio-bottom">
+                        <div>Se hvor du finder det her</div>
+                        <div class="claim_form_info-container">
+                          <div class="claim_form_info-tooltip">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                            <div class="claim_form_tip"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label></div>
+                  <div class="claim_form_bottom">
+                    <a href="#" class="button w-button">Tilbage</a>
+                  </div>
+                </div>
+                <div fs-form-info="2" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>Anmeld skade</h2>
+                      <p>Sådan finder du dit IMEI nummer på din iPhone</p>
+                    </div>
+                  </div>
+                  <div class="claim_form_selection-container is-2-column"><img src="images/iPhone-mockup_01.png" loading="lazy" width="298" height="476" alt="">
+                    <div class="claim_info_content-right">
+                      <ol role="list">
+                        <li>Gå til indstillinger</li>
+                        <li>Tryk på generelt</li>
+                        <li>Tryk på om</li>
+                        <li>Rul ned til IMEI</li>
+                      </ol>
+                      <div class="margin-top margin-small">
+                        <a href="#" class="text-style-link">Læs mere på Apples hjemmeside</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="claim_form_bottom">
+                    <a href="#" class="button w-button">Tilbage</a>
+                  </div>
+                </div>
+                <div fs-form-info="2" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>Anmeld skade</h2>
+                      <p>Sådan finder du dit IMEI nummer på din Android</p>
+                    </div>
+                  </div>
+                  <div class="claim_form_selection-container is-2-column"><img src="images/Android-mockup_01.png" loading="lazy" width="248" height="455" alt="">
+                    <div class="claim_info_content-right">
+                      <ol role="list">
+                        <li>Åben indstillinger</li>
+                        <li>Tryk på om telefon</li>
+                        <li>Tryk på status</li>
+                        <li>Tryk på IMEI information</li>
+                      </ol>
+                      <div class="margin-top margin-small">
+                        <a href="#" class="text-style-link">Læs mere her</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="claim_form_bottom">
+                    <a href="#" class="button w-button">Tilbage</a>
+                  </div>
+                </div>
+                <div fs-form-info="2" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>Anmeld skade</h2>
+                      <p>Sådan finder du dit IMEI nummer på din Android</p>
+                    </div>
+                  </div>
+                  <div class="claim_form_selection-container is-2-column"><img src="images/Serial-no.png" loading="lazy" width="308" height="499" alt="">
+                    <div class="claim_info_content-right">
+                      <ol role="list">
+                        <li>Åben indstillinger</li>
+                        <li>Tryk på om telefon</li>
+                        <li>Tryk på status</li>
+                        <li>Tryk på IMEI information</li>
+                      </ol>
+                      <div class="margin-top margin-small">
+                        <a href="#" class="text-style-link">Læs mere her</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="claim_form_bottom">
+                    <a href="#" class="button w-button">Tilbage</a>
+                  </div>
+                </div>
+                <div fs-form-info="2" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>IT kriminalitet / Cyber Crime</h2>
+                    </div>
+                  </div>
+                  <div class="claim_form_selection-container">
+                    <div class="max-width-large">
+                      <div class="claim_text-rich-text w-richtext">
+                        <h5>IT kriminalitet / Cyber Crime</h5>
+                        <p>Ved anmeldelse af skader vedr. IT-kriminalitet, ID-tyveri eller vores Cyberforsikring dækning, bedes du ringe til os på <a href="tel:+4545907330">+45 4590 7330 </a>
+                        </p>
+                        <p>Inden du kontakter os, bedes du være opmærksom på at skaden skal anmeldes til politiet, inden vi kan færdigbehandle din sag.</p>
+                        <p>Hvis du har anmeldt skaden til politiet inden du kontakter os, venligst hav dokumentation herfor klar, i form af politirapport eller dennes journalnummer.</p>
+                        <p>Du kan også sende os en mail på <a href="mailto:claim@affinordic.com">claim@affinordic.com </a> inkl. dit navn og telefonnummer, vedhæftet politirapport / journalnummer, så kontakter vi dig vedr. evt. manglende oplysninger samt det videre forløb.</p>
+                        <p><strong>VIGTIGT !</strong></p>
+                        <p>Har du konstateret eller har mistanke om ID-tyveri, sørg for at underrette dine bank- og kreditkortkontakter og sørge for at spærre alle kort, inden du kontakter os.</p>
+                        <p>To report a claim about cyber crime, ID theft or our Cyber product, please call us at <a href="tel:+4545907330">+45 4590 7330 </a>
+                        </p>
+                        <p>Before contacting us, please make sure the incident must be reported to the police, before we can settle your claim.</p>
+                        <p>If you have reported the incident to the police before contacting us, please make sure you have documentation ready, being either the police report or its journal number.</p>
+                        <p>Alternatively you can send an e-mail to <a href="mailto:claim@affinordic.com">claim@affinordic.com </a> incl. your name and phone number, attached police report / journal number, and we will contact you regarding any additional information needed and next steps.</p>
+                        <p><strong>IMPORTANT !</strong></p>
+                        <p>Have you detected or suspect ID theft, make sure to notify all your bank and credit card contacts, and be sure to block all relevant cards, before contacting us.</p>
+                        <p>‍</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="claim_form_bottom">
+                    <a href="#" class="button w-button">Tilbage</a>
+                  </div>
+                </div>
+                <div fs-form-info="2" class="claim_form_step">
+                  <div class="claim_form_top">
+                    <a href="https://www.affinordic.com/" class="claim_logo-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 154 22" fill="none" class="claim_logo">
+                        <g clip-path="url(#clip0_2515_1565)">
+                          <path d="M11.325 17.9629C7.31371 17.9629 5.72302 15.0415 5.5847 14.8341C5.37722 14.4884 5.2389 14.3328 4.92768 14.3501C4.61645 14.3501 4.14962 14.5748 3.52718 14.5748C1.59069 14.5748 0 12.9845 0 11.0311C0 9.11235 1.59069 7.52202 3.45802 7.52202C4.37439 7.52202 4.56458 7.74674 4.94497 7.74674C5.37722 7.74674 5.61928 7.26272 5.86134 6.917C7.07165 5.20566 8.92169 4.13391 11.325 4.13391C13.1923 4.13391 14.6447 4.7735 15.976 5.96625C16.1489 6.12183 16.3737 6.32927 16.6676 6.32927C17.0307 6.32927 17.6705 5.72425 19.2439 5.72425C22.114 5.72425 24.5692 8.09246 24.5692 11.0311C24.5692 14.0044 22.114 16.3726 19.3822 16.3726C17.8261 16.3726 17.1864 15.7676 16.7368 15.7676C16.3564 15.7676 16.2181 15.9231 15.8896 16.2516C15.1634 16.9603 13.6073 17.9629 11.325 17.9629ZM16.4602 6.83057C15.6475 6.83057 14.005 8.66291 14.005 11.0311C14.005 13.3302 15.7686 15.249 16.5293 15.249C17.2901 15.249 18.3275 13.0882 18.3275 11.0311C18.3275 8.90492 17.2728 6.83057 16.4602 6.83057ZM5.34264 8.21347C4.75478 8.21347 4.39168 9.90752 4.39168 11.083C4.39168 12.2757 4.75478 13.8834 5.34264 13.8834C5.87863 13.8834 6.96791 12.6215 6.96791 11.0311C6.96791 9.57908 6.03424 8.21347 5.34264 8.21347Z" fill="#010141"></path>
+                          <path d="M38.3886 1.78064L37.4406 4.30806H39.8824C40.026 4.30806 40.1409 4.36552 40.1984 4.53783L46.4896 21.1958C46.5758 21.3969 46.4609 21.5405 46.2598 21.5405H44.1053C43.9616 21.5405 43.8467 21.483 43.7893 21.3107L41.7784 15.9399H34.2519C34.0795 15.9399 33.9646 15.8251 33.9646 15.6527V13.5274L31.0345 21.3107C30.977 21.483 30.8621 21.5405 30.7185 21.5405H28.564C28.3628 21.5405 28.2479 21.3969 28.3341 21.1958L35.717 1.66572C35.7744 1.49342 35.8893 1.43604 36.0329 1.43604H38.1588C38.3598 1.43604 38.4748 1.57961 38.3886 1.78064ZM40.8591 13.5274L37.4118 4.33679L33.9646 13.5274H40.8591Z" fill="#010141"></path>
+                          <path d="M48.4717 6.31851V4.22189C48.4717 1.1201 50.2815 0 52.752 0C53.2404 0 53.7575 0.0287304 54.3033 0.114845C54.4756 0.143575 54.5618 0.258495 54.5618 0.4308V1.95297C54.5618 2.12527 54.4469 2.24019 54.2458 2.24019C53.9298 2.21146 53.6426 2.18273 53.3553 2.18273C52.2062 2.18273 50.9997 2.18273 50.9997 4.22189V6.60573H48.759C48.5866 6.60573 48.4717 6.49089 48.4717 6.31851ZM48.4717 8.96084C48.4717 8.78854 48.5866 8.67362 48.759 8.67362H50.9997V21.2532C50.9997 21.4256 50.8848 21.5405 50.7124 21.5405H48.759C48.5866 21.5405 48.4717 21.4256 48.4717 21.2532V8.96084ZM50.9997 6.60573L54.2746 6.60573C54.4469 6.60573 54.5618 6.72058 54.5618 6.89296V8.38639C54.5618 8.5587 54.4469 8.67362 54.2746 8.67362L50.9997 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M56.1416 6.31851V4.22189C56.1416 1.1201 57.9514 0 60.4219 0C60.9103 0 61.4274 0.0287304 61.9732 0.114845C62.1456 0.143575 62.2318 0.258495 62.2318 0.4308V1.95297C62.2318 2.12527 62.1168 2.24019 61.9157 2.24019C61.5998 2.21146 61.3125 2.18273 61.0252 2.18273C59.8761 2.18273 58.6696 2.18273 58.6696 4.22189V6.60573H56.4289C56.2565 6.60573 56.1416 6.49089 56.1416 6.31851ZM56.1416 8.96084C56.1416 8.78854 56.2565 8.67362 56.4289 8.67362H58.6696V21.2532C58.6696 21.4256 58.5547 21.5405 58.3823 21.5405H56.4289C56.2565 21.5405 56.1416 21.4256 56.1416 21.2532V8.96084ZM58.6696 6.60573L61.9445 6.60573C62.1168 6.60573 62.2318 6.72058 62.2318 6.89296V8.38639C62.2318 8.5587 62.1168 8.67362 61.9445 8.67362L58.6696 8.67362V6.60573Z" fill="#010141"></path>
+                          <path d="M68.6663 21.5405H66.7129C66.5405 21.5405 66.4256 21.4256 66.4256 21.2533V8.67364H64.2423C64.0699 8.67364 63.9551 8.55872 63.9551 8.38641V6.89298C63.9551 6.7206 64.0699 6.60575 64.2423 6.60575H68.6663C68.8387 6.60575 68.9536 6.7206 68.9536 6.89298V21.2533C68.9536 21.4256 68.8387 21.5405 68.6663 21.5405ZM67.6896 0.488281C68.6088 0.488281 69.2983 1.20623 69.2983 2.12529C69.2983 3.0157 68.6088 3.73372 67.6896 3.73372C66.7703 3.73372 66.0809 3.0157 66.0809 2.12529C66.0809 1.20623 66.7703 0.488281 67.6896 0.488281Z" fill="#010141"></path>
+                          <path d="M72.4009 6.40468C72.4009 6.23237 72.5158 6.11745 72.6882 6.11745H75.1587V21.2532C75.1587 21.4255 75.0438 21.5405 74.8714 21.5405H72.6882C72.5158 21.5405 72.4009 21.4255 72.4009 21.2532V6.40468ZM84.7535 21.3394L72.4871 1.78064C72.3721 1.57961 72.4296 1.43604 72.6594 1.43604H75.2449C75.3885 1.43604 75.5034 1.52215 75.5896 1.63707L87.856 21.1958C87.9709 21.3969 87.9135 21.5405 87.6836 21.5405H85.0982C84.9546 21.5405 84.8397 21.4543 84.7535 21.3394ZM85.1557 1.72318C85.1557 1.55088 85.2706 1.43604 85.4429 1.43604H87.6262C87.7986 1.43604 87.9135 1.55088 87.9135 1.72318V16.5143C87.9135 16.6867 87.7986 16.8016 87.6262 16.8016H85.1557V1.72318Z" fill="#010141"></path>
+                          <path d="M90.3838 14.0444C90.3838 9.19065 93.2565 6.14624 97.8241 6.14624C102.392 6.14624 105.264 9.19065 105.264 14.0444C105.264 18.9269 102.392 22 97.8241 22C93.2565 22 90.3838 18.9269 90.3838 14.0444ZM97.8241 19.7886C100.668 19.7886 102.42 17.577 102.42 14.0444C102.42 10.5405 100.668 8.3577 97.8241 8.3577C94.9802 8.3577 93.2278 10.5405 93.2278 14.0444C93.2278 17.577 94.9801 19.7886 97.8241 19.7886Z" fill="#010141"></path>
+                          <path d="M114.773 8.75983C114.428 8.67364 114.084 8.64491 113.768 8.64491C111.584 8.64491 109.947 10.1097 109.947 12.6084V21.2533C109.947 21.4256 109.832 21.5405 109.66 21.5405H107.706C107.534 21.5405 107.419 21.4256 107.419 21.2533V6.89298C107.419 6.7206 107.534 6.60575 107.706 6.60575H109.66C109.832 6.60575 109.947 6.7206 109.947 6.89298V8.81722H110.004C110.952 7.03655 112.877 5.859 114.859 6.51956C115.032 6.57702 115.089 6.7206 115.089 6.86425V8.50134C115.089 8.70237 114.974 8.78856 114.773 8.75983Z" fill="#010141"></path>
+                          <path d="M115.664 14.0444C115.664 9.19057 118.192 6.14616 122.185 6.14616C124.339 6.14616 126.063 7.03649 127.183 8.61612H127.241V0.574335C127.241 0.40203 127.355 0.287109 127.528 0.287109H129.481C129.654 0.287109 129.769 0.40203 129.769 0.574335V21.2532C129.769 21.4255 129.654 21.5404 129.481 21.5404H127.528C127.355 21.5404 127.241 21.4255 127.241 21.2532V19.5013H127.183C126.063 21.1096 124.339 22 122.185 22C118.192 22 115.664 18.9268 115.664 14.0444ZM122.874 19.7885C125.546 19.7885 127.241 17.577 127.241 14.0444C127.241 10.5404 125.546 8.35762 122.874 8.35762C120.174 8.35762 118.508 10.5404 118.508 14.0444C118.508 17.577 120.174 19.7885 122.874 19.7885Z" fill="#010141"></path>
+                          <path d="M136.922 21.5405H134.968C134.796 21.5405 134.681 21.4256 134.681 21.2533V8.67364H132.498C132.325 8.67364 132.21 8.55872 132.21 8.38641V6.89298C132.21 6.7206 132.325 6.60575 132.498 6.60575H136.922C137.094 6.60575 137.209 6.7206 137.209 6.89298V21.2533C137.209 21.4256 137.094 21.5405 136.922 21.5405ZM135.945 0.488281C136.864 0.488281 137.554 1.20623 137.554 2.12529C137.554 3.0157 136.864 3.73372 135.945 3.73372C135.026 3.73372 134.336 3.0157 134.336 2.12529C134.336 1.20623 135.026 0.488281 135.945 0.488281Z" fill="#010141"></path>
+                          <path d="M139.65 14.0444C139.65 9.19065 142.523 6.14624 147.119 6.14624C150.567 6.14624 153.066 7.86952 153.985 11.2585C154.043 11.4596 153.928 11.5744 153.727 11.5744H151.486C151.314 11.5744 151.199 11.4883 151.17 11.3159C150.653 9.50653 149.331 8.3577 147.119 8.3577C144.275 8.3577 142.494 10.5405 142.494 14.0444C142.494 17.5484 144.275 19.7311 147.119 19.7311C149.331 19.7311 150.653 18.5823 151.17 16.7729C151.199 16.6006 151.314 16.5144 151.486 16.5144H153.727C153.928 16.5144 154.043 16.6292 153.985 16.859C153.037 20.2194 150.567 21.9426 147.119 21.9426C142.523 21.9426 139.65 18.8982 139.65 14.0444Z" fill="#010141"></path>
+                        </g>
+                      </svg></a>
+                    <a href="#" class="button is-link w-button">Annuller anmeldelse</a>
+                  </div>
+                  <div class="claim_form_heading-container">
+                    <div class="claim_form_heading-block">
+                      <h2>Kontakt Affinordic</h2>
+                    </div>
+                  </div>
+                  <div class="claim_form_selection-container">
+                    <div class="max-width-large">
+                      <div class="claim_text-rich-text w-richtext">
+                        <p>Ved anmeldelse af skader vedr. [Produkttype-navn], bedes du ringe til os på <a href="tel:+4545907330">+45 4590 7330 </a>
+                        </p>
+                        <p>Du kan også sende os en mail på <a href="mailto:claim@affinordic.com" target="_blank">claim@affinordic.com</a> inkl. dit navn og telefonnummer, så kontakter en skadebehandler dig vedr. det videre forløb/</p>
+                        <p> </p>
+                        <p>To file a claim about [Produkttype-navn], please call us at +45 4590 7330</p>
+                        <p>Alternatively, you can send an e-mail to <a href="mailto:claim@affinordic.com" target="_blank">claim@affinordic.com</a> incl. your name and phone number, and we will contact you regarding next steps.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="claim_form_bottom">
+                    <a href="#" class="button w-button">Tilbage</a>
+                  </div>
+                </div>
+              </form>
+              <div class="w-form-done">
+                <div>Thank you! Your submission has been received!</div>
+              </div>
+              <div class="w-form-fail">
+                <div>Oops! Something went wrong while submitting the form.</div>
+              </div>
+            </div>
+            <div class="claim_footer">
+              <div>Ellers kan du kontakte os her <a href="mailto:claim@affinordic.com" target="_blank">claim@affinordic.com</a> • <a href="tel:45907330">45907330</a>
+              </div>
+              <div>© 2025 AffiNordic ApS  •  Blokken 15, 1. sal  •  3460 Birkerød  •  Danmark</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66221bccb6a56b23cacb7d06" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // File placeholder click handler
+    document.querySelectorAll("[claim-action='file-placeholder']").forEach(element => {
+        element.addEventListener('click', function() {
+            const fileInput = this.parentElement.querySelector("[type='file']");
+            if (fileInput) {
+                fileInput.click();
+            }
+        });
+    });
+
+    // Auto-resize textareas
+    const textareaElements = document.querySelectorAll("textarea");
+    textareaElements.forEach(textarea => {
+        textarea.addEventListener('input', () => {
+            textarea.style.height = 'auto';
+            textarea.style.height = `${textarea.scrollHeight}px`;
+        });
+    });
+
+    // Hidden trigger click handler
+    document.querySelectorAll('[data-hidden="trigger"]').forEach(element => {
+        element.addEventListener('click', function() {
+            const targets = this.parentElement.querySelectorAll('[data-hidden="target"]');
+            targets.forEach(target => {
+                target.style.opacity = '1';
+            });
+        });
+    });
+
+    // Status toggle click handler (fixed the missing closing bracket)
+    document.querySelectorAll('[data-status]').forEach(element => {
+        element.addEventListener('click', function() {
+            this.classList.toggle('is-checked');
+        });
+    });
+});
+</script>
+  <script src="https://fengyuanchen.github.io/datepicker/js/datepicker.js"></script>
+  <script>
+    $(document).ready(function () {
+        $('[data-toggle="datepicker"]').datepicker({
+            format: 'mm-dd-yyyy'
+        });
+        // Available date placeholders:
+        // Year: yyyy
+        // Month: mm
+        // Day: dd
+        if (window.innerWidth < 768) {
+            $('[data-toggle="datepicker"]').attr('readonly', 'readonly')
+        }
+    });
+</script>
+  <!--  You can put your custom CSS attributes  -->
+  <style>
+    /* You can apply your own color! 
+    --main-light-color is the light grey, 
+    --main-dark-color is the text
+    --main-active-color is the highlight
+    you can just add like red, or blue or any helx you like! */
+    :root {
+        --main-light-color: #7ca9cd;
+        --main-dark-color: var(--schemes--on-primary-container);
+        --main-active-color: var(--schemes--on-primary-container);
+    }
+    .datepicker-dropdown {
+        border-radius: 8px !important;
+        border: 0 !important;
+        -webkit-box-shadow: 0px 48px 88px rgba(23, 9, 54, 0.08);
+        box-shadow: 0px 48px 88px rgba(23, 9, 54, 0.08);
+        box-sizing: border-box;
+    }
+    .datepicker-panel>ul[data-view="week"]>li {
+        background-color: var(--main-light-color);
+        color: var(--main-dark-color);
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0;
+        height: initial;
+        padding-top: 3px;
+        margin-bottom: 4px;
+    }
+    .datepicker-panel>ul[data-view="week"]>li:hover {
+        background-color: var(--main-light-color);
+        color: var(--main-dark-color);
+        border-radius: 0px;
+    }
+    .datepicker-panel>ul[data-view="week"] li:first-child {
+        border-radius: 20px 0 0 20px;
+    }
+    .datepicker-panel>ul[data-view="week"] li:last-child {
+        border-radius: 0 20px 20px 0;
+    }
+    .datepicker-top-left::before,
+    .datepicker-top-left::after {
+        display: none;
+    }
+    .datepicker-panel>ul>li.picked, .datepicker-panel>ul>li.highlighted,
+    .datepicker-panel>ul>li.picked:hover {
+        color: var(--main-active-color);
+        background: var(--main-light-color);
+        border-radius: 8px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    li[data-view="month current"],
+    li[data-view="year current"] {
+        text-align: left;
+        color: var(--main-dark-color);
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        /* line-height: 24px; */
+        padding-left: 15px;
+        border-radius: 10px;
+    }
+    .datepicker-panel>ul>li:hover {
+        background: var(--main-light-color);
+        border-radius: 10px;
+    }
+    li[data-view="month current"],
+    li[data-view="year current"],
+    li[data-view="years current"] {
+        margin-bottom: 4px !important;
+    }
+    @media screen and (min-width: 768px) {
+        .datepicker-dropdown {
+            width: 364px;
+            padding: 12px;
+        }
+        .datepicker-panel>ul>li {
+            width: 48px;
+            height: 48px;
+            padding-top: 10px;
+        }
+        li[data-view="month next"],
+        li[data-view="year next"],
+        li[data-view="years next"] {
+            position: absolute;
+            right: 18px
+        }
+        li[data-view="month prev"],
+        li[data-view="year prev"],
+        li[data-view="years prev"] {
+            position: absolute;
+            right: 66px
+        }
+        ul[data-view="months"] li,
+        ul[data-view="years"] li {
+            padding-top: 0px;
+            width: 57px !important;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .datepicker-panel {
+            transform: scale(0.97);
+        }
+    }
+</style>
+</body>
+</html>
